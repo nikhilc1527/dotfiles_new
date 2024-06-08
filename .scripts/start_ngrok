@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -x
+
+killall ngrok
+ngrok tcp --config ~/.config/ngrok.yml --log stdout 22 &
+while [ ! $(curl -s localhost:4040/api/tunnels) ]; do
+      true;
+done
+sleep 1
+url=$(curl -s localhost:4040/api/tunnels | jq ".tunnels | .[0] | .public_url")
+first=$(echo $url | grep -o "[0-9]*.tcp.ngrok.io")
+port=$(echo $url | grep -o ":[0-9]*\"" | cut -c 2- | rev | cut -c 2- | rev)
+url=$(printf "ssh nikhilc@%s -p %s\n" $first $port)
+echo $url
+echo $url > ~/MyFiles/Nikhil/ngrok_url/url.txt
+notify-send "$url"
+cd ~/MyFiles/Nikhil/ngrok_url/
+git add url.txt
+git commit -m "$(date)"
+git push
+notify-send "finished starting ngrok"

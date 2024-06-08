@@ -1,0 +1,24 @@
+#!/bin/sh
+
+set -xe
+
+wallpaper=$(cat ~/.cache/wal/wal)
+wallpaper=$(readlink -f $wallpaper)
+
+if [ "$#" -eq 1 ]; then
+	wallpaper=$1
+fi
+
+echo $wallpaper
+
+wal -i $wallpaper
+cp ~/.cache/wal/colors-waybar.css ~/.config/waybar/
+cp ~/.cache/wal/fuzzel.ini ~/.config/fuzzel/
+
+killall waybar || true
+
+# sleep 1
+pywalfox update
+
+waybar &
+swaybg -i $wallpaper &

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+unquoted=$(/usr/bin/ls -t /home/haddr/Downloads | head -n1)
+quoted=$(echo "/home/haddr/Downloads/$unquoted")
+
+([ "$#" -gt 0 ] && /usr/bin/mv "$quoted" "$1") || /usr/bin/mv "$quoted" .

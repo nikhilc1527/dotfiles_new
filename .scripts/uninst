@@ -1,0 +1,29 @@
+#!/usr/bin/python3
+
+import subprocess
+import os
+
+def main():
+    sub = subprocess.run(["yay -Sl | grep -i installed | fzf -m"], text=True, shell=True,
+                     stdout=subprocess.PIPE)
+    if (sub.returncode != 0 or not sub.stdout):
+        exit(0)
+
+    out = sub.stdout
+    packages = out.split('\n')
+    package_list = ""
+
+    print("Packages:")
+    for i in range(0, len(packages) - 1):
+        cur_pack = packages[i].split(' ')
+        print(cur_pack[0] + "/" + cur_pack[1])
+    print()
+    
+    for i in range(0, len(packages) - 1):
+        cur_pack = packages[i].split(' ')
+        package_list += str.format(" {}", cur_pack[1])
+
+    os.system(str.format("yay -Rns {}", package_list))
+
+if __name__ == "__main__":
+    main()

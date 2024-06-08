@@ -1,0 +1,12 @@
+#!/bin/sh
+
+[ "$#" -ne "1" ] && echo "need 1 argument" && exit
+
+line=$(xinput list | grep "MOSART Semi. 2.4G Keyboard Mouse" | grep pointer | grep -v Control)
+# echo $line
+line_split=$(echo $line | tr -s " " "\012" | grep id)
+# echo $line_split
+id=$(echo $line_split | awk -F= '{print $2;}')
+# echo $id
+
+xinput set-prop "$id" --type=float 178 "$1" 0 0 0 "$1" 0 0 0 1

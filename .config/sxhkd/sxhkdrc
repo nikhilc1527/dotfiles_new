@@ -1,0 +1,83 @@
+super + n ; {y,n}
+      dunstctl set-paused {false,true}
+
+super + t ; {a,l,d}
+      dt {add,list,done}
+
+super + u
+      ddg_last_download
+
+super + shift + x
+      my_lock
+
+super + w
+      $BROWSER
+
+super + e
+      $TERMINAL -e neomutt
+
+super + i
+      xdotool type "|0|"
+
+super + o
+      emacsclient -c -e "(dired \"/home/haddr\")" -e "(helm-find-files-1 \"/home/haddr/\")"
+
+super + l
+      emacsclient -c -e "(dired \"/sudo::/\")" -e "(helm-find-files-1 \"/sudo::/\")"
+
+super + y
+      discord
+
+super + z
+      boomer
+
+super + r
+      kill -s SIGUSR1 $(pgrep sxhkd) && notify-send -t 1000 "updated sxhkd"
+
+super + Return
+      $TERMInal
+
+super + shift + b
+      notify-send $(battery)
+
+super + shift + Return
+      cat ~/.cache/fd_dirs | dmenu | xargs $TERMINAL --working-directory
+
+super + d
+      dmenu_run
+
+super + shift + d
+      passmenu
+
+super + BackSpace
+      sysact
+
+super + {minus,plus,equal}
+      volume_changer output {$(( $(pamixer --get-volume) - 5 )),$(( $(pamixer --get-volume) + 5 )),50}
+
+super + control + {minus,plus,equal}
+      volume_changer input {$(( $(pamixer --default-source --get-volume) - 1 )),$(( $(pamixer --default-source --get-volume) + 1 )),50}
+
+super + p
+      OUT=~/Pictures/$(date '+%Y_%m_%d_%H_%M_%S').png; maim -u -s $OUT && copyq write image/png - < $OUT && copyq select 0
+
+super + shift + p
+      OUT=~/Pictures/$(date '+%Y_%m_%d_%H_%M_%S').png; maim -u $OUT && copyq write image/png - < $OUT && copyq select 0
+
+super + shift + b
+      yad_battery
+
+XF86MonBrightnessUp
+      brightness up
+
+XF86MonBrightnessDown
+      brightness down
+
+XF86AudioRaiseVolume
+      volume_changer output $(( $(pamixer --get-volume) + 5 ))
+
+XF86AudioLowerVolume
+      volume_changer output $(( $(pamixer --get-volume) - 5 ))
+
+XF86AudioMute
+      volume_changer output 0

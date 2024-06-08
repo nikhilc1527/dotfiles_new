@@ -1,0 +1,3 @@
+#!/bin/sh
+
+sshfs me:MyFiles/Nikhil/wisco_22_23/sem2 wisco_22_23

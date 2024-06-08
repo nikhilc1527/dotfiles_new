@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+/usr/bin/git --git-dir=/home/nikhilc/.cfg --work-tree=/home/nikhilc "$@"

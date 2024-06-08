@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -x
+
+while IFS="," read -r user user2 user3 title pass note url category otpSecret
+do
+    echo -e "$pass\n$pass\n" | pass insert "$title/$user"
+done < <(tail -n +2 credentials.csv)

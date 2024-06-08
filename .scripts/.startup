@@ -1,0 +1,96 @@
+#!/bin/sh
+
+set -x
+
+dunst -follow none &
+
+update_packages() {
+	# gpg -d ~/.password.gpg | yay --sudoflags -s -syyuu --noconfirm
+	r=$(mktemp)
+	yay -qu | sed '/ignored/d' | awk '{print $1}' >> $r
+        pacman -qu | sed '/ignored/d' | awk '{print $1}' >> $r
+        # cat $r
+	while read pkg
+        do
+            inst $pkg
+        done
+
+        rm $r
+        
+	# out=$?
+	# [ "$out" = "0" ] && notify-send "successfully updated all packages"
+	# [ "$out" = "0" ] || notify-send "unsuccessfully updated all packages"
+        notify-send -u low "finished updating all packages"
+}
+
+update_pkglist() {
+    rm ~/.cache/pkglist
+    touch ~/.cache/pkglist 
+    pacman -sl core         >> ~/.cache/pkglist
+    pacman -sl community    >> ~/.cache/pkglist
+    pacman -sl extra        >> ~/.cache/pkglist
+    pacman -sl multilib     >> ~/.cache/pkglist
+    yay    -sl aur          >> ~/.cache/pkglist
+}
+
+ping -c 1 google.com
+
+while [ "$?" -gt "0" ]; do
+	sleep 0.1
+	ping -c 1 google.com
+done
+
+tty=$(tty)
+tty_cut=$(echo "$tty" | awk -F/ '{print $3}' | cut -c 4-)
+
+echo "#!/bin/sh" > ~/.config/tty.sh
+echo "#$tty" >> ~/.config/tty.sh
+echo "DISPLAY=:$tty" >> ~/.config/tty.sh
+
+update_pkglist &
+update_packages &
+# /home/nikhilc/.scripts/start_ngrok > /tmp/ngrok_log.txt &
+
+feh --no-fehbg --bg-scale ~/.local/share/backgrounds/background.png
+# nitrogen --restore
+# set pywal with nitrogen saved wallpaper
+# cat .config/nitrogen/bg-saved.cfg | grep file | awk -F= '{print $2}' | xargs wal -i
+redshift -P -O 3000
+
+emacs --daemon &
+setxkbmap -option compose:ralt
+gromit-mpx &
+killall sxhkd; sxhkd &
+# plz systemctl restart bluetooth
+# bluetoothctl power on
+
+setxkbmap -option caps:swapescape
+
+update_config &
+
+picom &
+
+rclone mount googledrive: ~/drive/ &
+
+publicify &
+
+clipmenud &
+
+copyq --start-server &
+
+blueman-applet &
+
+ibus-daemon -drx --desktop=dwm
+/usr/share/openbangla-keyboard/ibus-openbangla &
+
+# battery_check &
+
+set_mouse_dpi 0.5
+
+xscreensaver &
+
+syncthing &
+
+# polybar &
+
+notify-send -u low "finished startup script"
