@@ -1,0 +1,25 @@
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("org-capture-last-stored"
+ (filename . "~/MyFiles/Nikhil/org-roam-files/20211024212948-testing_3.org")
+ (front-context-string)
+ (rear-context-string . "itle: testing 3\n")
+ (position . 87))
+("planner.org"
+ (filename . "~/MyFiles/Nikhil/org_agenda/planner.org")
+ (front-context-string . "\n* Pysics 4B SJC")
+ (rear-context-string)
+ (position . 13))
+("floobits-nishantc1527-34678"
+ (filename . "~/floobits/nishantc1527/Flame/compiler/src/main/java/compiler/main/Main.java")
+ (front-context-string . "import compiler.")
+ (rear-context-string . ".ConsoleColors;\n")
+ (position . 93))
+("floobits-nishantc1527-34674"
+ (filename . "~/floobits/nishantc1527/Flame/compiler/src/main/java/compiler/main/Main.java")
+ (front-context-string . "ols.compilercomm")
+ (rear-context-string . "piler.compilerto")
+ (position . 119))
+)

@@ -3,3 +3,5 @@
 .config/emacs/elpa
 .config/emacs/modules
 .config/emacs/auto-save-list
+.config/emacs/.cache
+.config/emacs/backups
