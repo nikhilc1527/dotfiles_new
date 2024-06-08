@@ -1,1 +1,5 @@
 *.ccls-cache
+.config/emacs/.local
+.config/emacs/elpa
+.config/emacs/modules
+.config/emacs/auto-save-list
