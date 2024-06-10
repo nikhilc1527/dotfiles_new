@@ -1,11 +1,95 @@
 ;;; -*- coding: utf-8; mode: lisp-data -*-
-(("/home/haddr/.config/emacs/"
-  (dired-filename . "/home/haddr/.config/emacs/.cache"))
- ("/home/haddr/.config/emacs/myinit.org" . 5133)
- ("/home/haddr/.config/hypr/hyprland.conf" . 4515)
- ("/home/haddr/.config/hypr/hyprlock.conf" . 164)
+(("/home/haddr/.ssh/"
+  (dired-filename . "/home/haddr/.ssh/id_rsa"))
+ ("/home/haddr/.config/emacs/elpa/"
+  (dired-filename . "/home/haddr/.config/emacs/elpa/ace-jump-helm-line-20160918.1836"))
+ ("/home/haddr/.config/emacs/.cache/"
+  (dired-filename . "/home/haddr/.config/emacs/.cache/lsp"))
+ ("/home/haddr/.expo/"
+  (dired-filename . "/home/haddr/.expo/android-apk-cache"))
+ ("/home/haddr/Downloads/"
+  (dired-filename . "/home/haddr/Downloads/New Super Mario Bros. Wii (USA) (En,Fr,Es) (Rev 2).7z"))
+ ("/home/haddr/dotfiles/"
+  (dired-filename . "/home/haddr/dotfiles/.bashrc"))
+ ("/home/haddr/Documents/" . 123)
+ ("/home/haddr/Desktop/" . 121)
+ ("/home/haddr/.android/"
+  (dired-filename . "/home/haddr/.android/adb.5037"))
+ ("/home/haddr/.config/devcert/"
+  (dired-filename . "/home/haddr/.config/devcert/certificate-authority"))
+ ("/home/haddr/.config/discord/"
+  (dired-filename . "/home/haddr/.config/discord/0.0.54"))
+ ("/home/haddr/.config/neofetch/"
+  (dired-filename . "/home/haddr/.config/neofetch/config.conf"))
+ ("/home/haddr/.config/pcmanfm/"
+  (dired-filename . "/home/haddr/.config/pcmanfm/default"))
+ ("/home/haddr/.config/pcmanfm/default/"
+  (dired-filename . "/home/haddr/.config/pcmanfm/default/pcmanfm.conf"))
+ ("/home/haddr/.config/procps/" . 128)
+ ("/home/haddr/.config/pulse/"
+  (dired-filename . "/home/haddr/.config/pulse/2da4a2148e1543df80248443e8cc4ee7-card-database.tdb"))
+ ("/home/haddr/.config/wal/"
+  (dired-filename . "/home/haddr/.config/wal/colorschemes"))
+ ("/home/haddr/.config/wal/colorschemes/"
+  (dired-filename . "/home/haddr/.config/wal/colorschemes/light"))
+ ("/home/haddr/.config/wal/colorschemes/light/" . 142)
+ ("/home/haddr/.config/wal/colorschemes/dark/" . 141)
+ ("/home/haddr/.config/wal/templates/"
+  (dired-filename . "/home/haddr/.config/wal/templates/colors-hyprland.conf"))
+ ("/home/haddr/.config/yay/" . 125)
+ ("/home/haddr/.config/menus/"
+  (dired-filename . "/home/haddr/.config/menus/applications-merged"))
+ ("/home/haddr/.config/menus/applications-merged/"
+  (dired-filename . "/home/haddr/.config/menus/applications-merged/wine-Programs-Riot Games-League of Legends.menu"))
+ ("/home/haddr/.config/gnupg/"
+  (dired-filename . "/home/haddr/.config/gnupg/crls.d"))
+ ("/home/haddr/.config/fuzzel/"
+  (dired-filename . "/home/haddr/.config/fuzzel/fuzzel.ini"))
+ ("/home/haddr/.config/gnome-session/"
+  (dired-filename . "/home/haddr/.config/gnome-session/saved-session"))
+ ("/home/haddr/.config/copyq/"
+  (dired-filename . "/home/haddr/.config/copyq/copyq-commands.ini"))
+ ("/home/haddr/.config/autostart/"
+  (dired-filename . "/home/haddr/.config/autostart/jetbrains-toolbox.desktop"))
+ ("/home/haddr/.config/Android Open Source Project/"
+  (dired-filename . "/home/haddr/.config/Android Open Source Project/Emulator.conf"))
+ ("/home/haddr/.local/share/"
+  (dired-filename . "/home/haddr/.local/share/qutebrowser"))
+ ("/home/haddr/.local/share/qutebrowser/"
+  (dired-filename . "/home/haddr/.local/share/qutebrowser/blocked-hosts"))
+ ("/home/haddr/.config/emacs/elpa/helm-20230704.1018/helm-files.el" . 306750)
+ ("/home/haddr/.config/hypr/" . 320)
+ ("/home/haddr/.scripts/"
+  (dired-filename . "/home/haddr/.scripts/.."))
+ ("/home/haddr/.cache/"
+  (dired-filename . "/home/haddr/.cache/.."))
+ ("/home/haddr/.local/src/"
+  (dired-filename . "/home/haddr/.local/src/.."))
+ ("/home/haddr/.local/"
+  (dired-filename . "/home/haddr/.local/.."))
+ ("/home/haddr/.config/emacs/.local/straight/repos/"
+  (dired-filename . "/home/haddr/.config/emacs/.local/straight/repos/.."))
+ ("/home/haddr/.config/emacs/.local/straight/"
+  (dired-filename . "/home/haddr/.config/emacs/.local/straight/repos"))
+ ("/home/haddr/.config/emacs/.local/"
+  (dired-filename . "/home/haddr/.config/emacs/.local/straight"))
+ ("/home/haddr/dotfiles/.gitignore" . 148)
+ ("/home/haddr/.config/emacs/"
+  (dired-filename . "/home/haddr/.config/emacs/.local"))
+ ("/home/haddr/.config/"
+  (dired-filename . "/home/haddr/.config/emacs"))
  ("/home/haddr/"
-  (dired-filename . "/home/haddr/hypr"))
+  (dired-filename . "/home/haddr/.gitconfig"))
+ ("/home/haddr/.config/hypr/hyprland.conf" . 2934)
+ ("/home/haddr/.config/Google/"
+  (dired-filename . "/home/haddr/.config/Google/AndroidStudio2022.2"))
+ ("/home/haddr/.config/Google/AndroidStudio2022.2/"
+  (dired-filename . "/home/haddr/.config/Google/AndroidStudio2022.2/bundled_plugins.txt"))
+ ("/home/haddr/.config/gpick/"
+  (dired-filename . "/home/haddr/.config/gpick/autosave.gpa"))
+ ("/home/haddr/.config/user-dirs.dirs" . 634)
+ ("/home/haddr/.config/emacs/myinit.org" . 5133)
+ ("/home/haddr/.config/hypr/hyprlock.conf" . 164)
  ("/home/haddr/projects/tpumps/"
   (dired-filename . "/home/haddr/projects/tpumps/App.js"))
  ("/home/haddr/projects/tpumps/screens/Cart.js" . 135)
@@ -17,8 +101,6 @@
  ("/home/haddr/projects/tpumps/App.js" . 4067)
  ("/home/haddr/projects/tpumps/screens/CustomerFavorites.js" . 135)
  ("/home/haddr/projects/tpumps/components/" . 189)
- ("/home/haddr/Downloads/"
-  (dired-filename . "/home/haddr/Downloads/New Super Mario Bros. Wii (USA) (En,Fr,Es) (Rev 2).7z"))
  ("/home/haddr/projects/tpumps/screens/FlavorSelect.js" . 137)
  ("/home/haddr/projects/tpumps/screens/ChooseLocation.js" . 129)
  ("/home/haddr/projects/tpumps/screens/PaymentMethods.js" . 129)
@@ -94,8 +176,6 @@
   (dired-filename . "/home/haddr/projects/react_native_udemy/section6/models/meal.js"))
  ("/home/haddr/.scripts/set_bg" . 79)
  ("/home/haddr/projects/react_native_udemy/section6/app.json" . 223)
- ("/home/haddr/.config/"
-  (dired-filename . "/home/haddr/.config/alacritty"))
  ("/home/haddr/.local/src/dwm/"
   (dired-filename . "/home/haddr/.local/src/dwm/dwm.c"))
  ("/home/haddr/.local/src/dwm/dwm.c" . 4120)

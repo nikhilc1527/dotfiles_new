@@ -5,3 +5,5 @@
 .config/emacs/auto-save-list
 .config/emacs/.cache
 .config/emacs/backups
+.config/emacs/places
+.config/emacs/tramp
