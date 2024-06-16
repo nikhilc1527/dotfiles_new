@@ -1,60 +1,55 @@
+@define-color critical #ff0000; /* critical color */
+@define-color warning #f3f809;  /* warning color */
+/* @define-color fgcolor #ffffff;  /\* foreground color *\/ */
+/* @define-color bgcolor #303030;  /\* background color *\/ */
+/* @define-color bgcolor #222436;  /\* background color *\/ */
+@define-color alert   #df3320;
+
+/* @define-color accent1 #ff7a93; */
+/* @define-color accent2 #b9f27c; */
+/* @define-color accent3 #ff9e64; */
+/* @define-color accent4 #bb9af7; */
+/* @define-color accent5 #7da6ff; */
+/* @define-color accent6 #0db9d7; */
+
 @import 'colors-waybar.css';
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    border: none;
+    font-family: "JetBrainsMono";
+    /* Recommended font sizes: 720p: ~14px, 1080p: ~18px */
+    font-size: 18px;
 }
 
 window#waybar {
-    background-color: rgba(40, 40, 40, 0.2);
-    /*background-color: rgba(@background, 0.4);*/
-    border-bottom: 0px solid rgba(100, 114, 125, 0.5);
+    /* background-color: rgba(34, 36, 54, 0.6); */
+    background-color: @background;
+    /* border-bottom: 0px solid rgba(100, 114, 125, 0.5); */
     color: @foreground;
     transition-property: background-color;
     transition-duration: .5s;
+    border-radius: 4px;
 }
 
 window#waybar.hidden {
     opacity: 0.2;
 }
 
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
-
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
-}
-
-button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 0;
-}
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
 #workspaces button {
-    padding: 0 5px;
+    padding: 0px;
+    margin: 4px 0 6px 0;
     background-color: transparent;
     color: #ffffff;
+    min-width: 36px;
+}
+
+#workspaces button.active {
+    padding: 0 0 0 0;
+    margin: 4px 0 6px 0;
+    background-color: #ddddff;
+    color: #303030;
+    min-width: 36px;
 }
 
 #workspaces button:hover {
@@ -62,37 +57,38 @@ button:hover {
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+    background-color: #bbccdd;
+    color: #323232;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    color: red;
 }
 
 #mode {
     background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
 }
 
 #clock,
 #battery,
 #cpu,
 #memory,
-#disk,
 #temperature,
 #backlight,
 #network,
 #pulseaudio,
-#wireplumber,
 #custom-media,
 #tray,
 #mode,
 #idle_inhibitor,
-#scratchpad,
-#mpd {
-    padding: 0 10px;
-    color: #ffffff;
+#custom-power,
+#custom-pacman,
+#language {
+    padding: 0px 3px;
+    margin: 4px 3px 5px 3px;
+    color: @foreground;
+    background-color:transparent;
 }
 
 #window,
@@ -105,35 +101,13 @@ button:hover {
     margin-left: 0;
 }
 
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
 #clock {
-    background-color: @color1;
-}
-
-#battery {
-    background-color: @color3;
     color: @foreground;
-}
-
-#battery.charging, #battery.plugged {
-    color: @color3;
-    background-color: @background;
-}
-
-@keyframes blink {
-    to {
-	color: @foreground;
-	background-color: @background;
-   }
-}
-
-#battery.critical:not(.charging) {
-    background-color: @color4;
-    color: @foreground;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
 }
 
 label:focus {
@@ -141,137 +115,53 @@ label:focus {
 }
 
 #cpu {
-    background-color: @color2;
-    /*color: #000000;*/
+    color: @color5;
 }
 
 #memory {
-    background-color: @color3;
-}
-
-#disk {
-    background-color: #964B00;
-}
-
-#backlight {
-    background-color: @color6;
+    color: @color8;
 }
 
 #network {
-    background-color: @color4;
+    color: @color6;
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+    color: @alert;
 }
 
 #pulseaudio {
-    background-color: @color5;
+    color: @color5;
 }
 
 #pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
-}
-
-#wireplumber {
-    background-color: #fff0f5;
-    color: #000000;
-}
-
-#wireplumber.muted {
-    background-color: #f53c3c;
-}
-
-#custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
-}
-
-#custom-media.custom-spotify {
-    background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
+    color: #a0a0a0;
 }
 
 #temperature {
-    background-color: @color6;
+    color: @color6;
 }
 
 #temperature.critical {
-    background-color: #eb4d4b;
+    background-color: @critical;
 }
 
 #tray {
-    background-color: @color8;
+
 }
 
-#tray > .passive {
-    -gtk-icon-effect: dim;
+#custom-separator {
+    color: #606060;
+    margin: 0 1px;
+    padding-bottom: 5px;
 }
 
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
+#custom-wmname {
+    min-width: 36px;
+    font-size: 15px;
 }
 
-#idle_inhibitor {
-    background-color: #2d3436;
-}
-
-#idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
-}
-
-#mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
-}
-
-#mpd.disconnected {
-    background-color: #f53c3c;
-}
-
-#mpd.stopped {
-    background-color: #90b1b1;
-}
-
-#mpd.paused {
-    background-color: #51a37a;
-}
-
-#language {
-    background: #00b093;
-    color: #740864;
-    padding: 0 5px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state {
-    background: #97e1ad;
-    color: #000000;
-    padding: 0 0px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state > label {
-    padding: 0 5px;
-}
-
-#keyboard-state > label.locked {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad.empty {
-	background-color: transparent;
+#custom-recorder,
+#custom-audiorec {
+    color: #c71585;
 }

@@ -125,3 +125,5 @@ if [ -d "$BOOKMARK_PATH" ]; then
     export CDPATH=".:$BOOKMARK_PATH/"
     alias g="cd -P"
 fi
+
+# [ "$TTY" = "/dev/tty2" ] && Hyprland
