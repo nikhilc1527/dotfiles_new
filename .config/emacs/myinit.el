@@ -17,6 +17,7 @@
   (global-set-key (kbd "C-c h o") 'helm-occur)
   (global-set-key (kbd "C-c h g") 'helm-google-suggest)
   (global-set-key (kbd "C-c h M-:") 'helm-eval-expression-with-eldoc)
+  (global-set-key (kbd "C-x b") 'helm-buffers-list)
   (require 'shell)
   (define-key shell-mode-map (kbd "C-c C-l") 'helm-comint-input-ring)
 

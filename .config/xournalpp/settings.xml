@@ -16,7 +16,7 @@
   <property name="displayDpi" value="72"/>
   <property name="mainWndWidth" value="2534"/>
   <property name="mainWndHeight" value="1574"/>
-  <property name="maximized" value="false"/>
+  <property name="maximized" value="true"/>
   <property name="showToolbar" value="true"/>
   <property name="showSidebar" value="false"/>
   <property name="sidebarWidth" value="50"/>
@@ -113,7 +113,7 @@
   <property name="inputSystemTPCButton" value="false"/>
   <property name="inputSystemDrawOutsideWindow" value="true"/>
   <property name="preferredLocale" value=""/>
-  <property name="stabilizerAveragingMethod" value="1"/>
+  <property name="stabilizerAveragingMethod" value="0"/>
   <property name="stabilizerPreprocessor" value="0"/>
   <property name="stabilizerBuffersize" value="17"/>
   <property name="stabilizerSigma" value="0.5"/>
@@ -223,6 +223,10 @@
       <attribute name="deviceClass" type="int" value="2"/>
       <attribute name="deviceSource" type="int" value="1"/>
     </data>
+    <data name="Wacom Intuos BT M Pen (Eraser)">
+      <attribute name="deviceClass" type="int" value="3"/>
+      <attribute name="deviceSource" type="int" value="2"/>
+    </data>
     <data name="Wayland Pointer">
       <attribute name="deviceClass" type="int" value="1"/>
       <attribute name="deviceSource" type="int" value="0"/>
@@ -252,7 +256,9 @@
     <data name="drawCoordinateSystem">
       <attribute name="drawingType" type="string" value="default"/>
     </data>
-    <data name="drawDoubleArrow"/>
+    <data name="drawDoubleArrow">
+      <attribute name="drawingType" type="string" value="default"/>
+    </data>
     <data name="drawEllipse">
       <attribute name="drawingType" type="string" value="default"/>
     </data>
@@ -291,13 +297,23 @@
     <data name="playObject">
       <attribute name="drawingType" type="string" value="default"/>
     </data>
-    <data name="selectMultiLayerRect"/>
-    <data name="selectMultiLayerRegion"/>
+    <data name="selectMultiLayerRect">
+      <attribute name="drawingType" type="string" value="default"/>
+    </data>
+    <data name="selectMultiLayerRegion">
+      <attribute name="drawingType" type="string" value="default"/>
+    </data>
     <data name="selectObject">
       <attribute name="drawingType" type="string" value="default"/>
     </data>
-    <data name="selectPdfTextLinear"/>
-    <data name="selectPdfTextRect"/>
+    <data name="selectPdfTextLinear">
+      <attribute name="color" type="hex" value="ff000000"/>
+      <attribute name="drawingType" type="string" value="default"/>
+    </data>
+    <data name="selectPdfTextRect">
+      <attribute name="color" type="hex" value="ff000000"/>
+      <attribute name="drawingType" type="string" value="default"/>
+    </data>
     <data name="selectRect">
       <attribute name="drawingType" type="string" value="default"/>
     </data>

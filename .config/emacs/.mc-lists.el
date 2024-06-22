@@ -4,7 +4,9 @@
 (setq mc/cmds-to-run-for-all
       '(
         electric-newline-and-maybe-indent
+        electric-pair-delete-pair
         end-of-visual-line
+        forward-sexp
         helm-M-x
         indent-for-tab-command
         my-backward-delete-word

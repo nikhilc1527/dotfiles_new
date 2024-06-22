@@ -1,5 +1,7 @@
 export PATH=$HOME/.scripts:$HOME/Downloads/node-v15.5.0-linux-x64/bin:$HOME/Downloads/google-cloud-sdk/bin:$HOME/.cabal/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$HOME/Downloads/fzf/bin:/mnt/sda2/Nikhil/git_cloned_repos/bat/target/release:~/.local/bin:/usr/sbin:/usr/local/bin:$HOME/MyFiles/Nikhil/git_cloned_repos/cordless:$HOME/.local/bin:/root/.local/bin:/usr/lib/gnupg:$HOME/.local/share/flutter/bin:/usr/bin/vendor_perl:$HOME/.local/src/Extract:$HOME/.config/cargo/bin
 
+export ZDOTDIR="$HOME"/.config/zsh
+
 export JAVA_HOME=/usr
 
 export VISUAL="emacsclient -a \"\" -c"
@@ -42,8 +44,6 @@ export NOTMUCH_CONFIG="$XDG_CONFIG_HOME"/notmuch-config
 export TASKRC="$XDG_CONFIG_HOME"/task/taskrc
 export ABDUCO_SOCKET_DIR="$XDG_STATE_HOME"/abduco
 
-export ZDOTDIR=$HOME/.config/zsh
-
 export GTK_THEME=Adwaita:dark
 export GTK_THEME=Adwaita:dark
 
@@ -70,3 +70,15 @@ export QT_SCALE_FACTOR=1
 
 export GDK_SCALE=1
 export GDK_DPI_SCALE=1
+
+export ANDROID_USER_HOME="$XDG_DATA_HOME"/android
+
+export ANDROID_HOME="$XDG_DATA_HOME"/android/sdk
+
+export PYENV_ROOT="$XDG_DATA_HOME"/pyenv
+
+export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
+
+export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
+
+export CARGO_HOME="$HOME/.config/cargo"

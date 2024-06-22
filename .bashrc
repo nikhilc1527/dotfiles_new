@@ -126,4 +126,4 @@ if [ -d "$BOOKMARK_PATH" ]; then
     alias g="cd -P"
 fi
 
-# [ "$TTY" = "/dev/tty2" ] && Hyprland
+[ "$TTY" = "/dev/tty2" ] && Hyprland
