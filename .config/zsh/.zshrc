@@ -19,6 +19,7 @@ export LANG=en_US.UTF-8
 source ~/.bashrc
 export HISTFILE="$XDG_CONFIG_HOME"/zsh/history
 source ~/.zshenv
+setopt interactivecomments
 
 # bindkey -v # set vi mode
 bindkey -e

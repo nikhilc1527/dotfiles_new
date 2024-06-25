@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/usr/bin/pinentry-gtk-2_legit "$@"

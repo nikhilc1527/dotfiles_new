@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -xe
+
+cd
+
+first_dl=$(/usr/bin/ls -t Downloads | head -n 1)
+formatted=$(printf "Downloads/%s" "$first_dl")
+
+dragon-drop "$formatted"

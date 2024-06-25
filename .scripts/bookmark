@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cur_dir=$(pwd)
+cd ~/.config/bookmarks/
+ln -s "$cur_dir" "$1"
+cd $cur_dir

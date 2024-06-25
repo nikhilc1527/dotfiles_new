@@ -1,0 +1,38 @@
+#!/bin/bash
+
+echo "$@"
+
+# set -x
+
+# Arbitrary but unique message id
+msgId="991050"
+
+case $1 in
+    "plus" )
+        CHANGE="+5%"
+        ;;
+    "minus" )
+	CHANGE="5%-"
+        ;;
+    "equal" )
+	CHANGE="50%"
+        ;;
+    * )
+        echo "first field must be either increase or decrease. your first field was:"
+        echo $1
+        exit
+        ;;
+esac
+
+if [ "$#" -ne 1 ]; then
+    echo "wrong number of fields"
+    exit
+fi
+
+out=$(brightnessctl s "$CHANGE")
+
+percent=$(echo $out | grep Current | awk -F"(" '{print $2}' | awk -F% '{print $1}')
+
+time=2000
+
+dunstify -a "changeBrightness" -t $time -u low -i audio-volume-high -r "$msgId" -h int:value:"$percent" "Brightness: ${percent}%"
