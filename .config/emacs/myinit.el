@@ -305,6 +305,13 @@ This command does not push text to `kill-ring'."
   :bind
   ("C-c SPC" . 'ace-jump-mode))
 
+(use-package drag-stuff
+  :bind
+  ("C-S-F" . 'drag-stuff-right)
+  ("C-S-B" . 'drag-stuff-left)
+  ("C-S-P" . 'drag-stuff-up)
+  ("C-S-N" . 'drag-stuff-down))
+
 ;; (defun save-compile-dwm ()
  ;;   (when (eq (symbol-value buffer-file-name) "/home/nikhil/.local/src/dwm/config.h")
  ;;     (start-process "make && plz make install && kill -HUP $(pgrep -u $USER \"\bdwm$\"")

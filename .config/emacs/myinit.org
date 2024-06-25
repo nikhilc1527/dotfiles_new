@@ -422,6 +422,17 @@ it gives you a small prompt with all possible next key strokes
 
 #+END_SRC
 
+** drag stuff
+#+BEGIN_SRC emacs-lisp
+        (use-package drag-stuff
+          :bind
+          ("C-S-F" . 'drag-stuff-right)
+          ("C-S-B" . 'drag-stuff-left)
+          ("C-S-P" . 'drag-stuff-up)
+          ("C-S-N" . 'drag-stuff-down))
+
+#+END_SRC
+
 * custom made functions
 Clear the buffer in eshell mode
 #+BEGIN_SRC emacs-lisp

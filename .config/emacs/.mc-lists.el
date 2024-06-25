@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        backward-sexp
         electric-newline-and-maybe-indent
         electric-pair-delete-pair
         end-of-visual-line
@@ -11,6 +12,7 @@
         indent-for-tab-command
         my-backward-delete-word
         my-delete-word
+        org-self-insert-command
         ))
 
 (setq mc/cmds-to-run-once
