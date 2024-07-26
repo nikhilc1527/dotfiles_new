@@ -4,6 +4,7 @@
 (setq mc/cmds-to-run-for-all
       '(
         backward-sexp
+        beginning-of-visual-line
         electric-newline-and-maybe-indent
         electric-pair-delete-pair
         end-of-visual-line
