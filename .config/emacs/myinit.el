@@ -123,7 +123,8 @@
      (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
      (set-language-environment "UTF-8")
 
-    (set-frame-parameter (selected-frame) 'alpha '(85 50))
+    ;; (set-frame-parameter (selected-frame) 'alpha '(85 50))
+(set-frame-parameter nil 'alpha-background 85)
 
   (global-auto-revert-mode t)
 (setq dired-dwim-target t)

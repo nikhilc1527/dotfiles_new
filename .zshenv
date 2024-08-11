@@ -66,9 +66,9 @@ export DEFAULT_SESSION="dwm"
 export IN_API_KEY="0f51f83430eb404d942aa18a2c6b066b"
 
 export QT_AUTO_SCREEN_SET_FACTOR=0
-export QT_SCALE_FACTOR=1
+export QT_SCALE_FACTOR=2
 
-export GDK_SCALE=1
+export GDK_SCALE=2
 export GDK_DPI_SCALE=1
 
 export ANDROID_USER_HOME="$XDG_DATA_HOME"/android
@@ -82,3 +82,5 @@ export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 
 export CARGO_HOME="$HOME/.config/cargo"
+
+# export WAYLAND_DISPLAY=wayland-0

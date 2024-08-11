@@ -8,6 +8,7 @@
         electric-pair-delete-pair
         end-of-visual-line
         forward-sexp
+        haskell-indentation-common-electric-command
         helm-M-x
         indent-for-tab-command
         my-backward-delete-word

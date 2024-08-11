@@ -130,6 +130,14 @@ label:focus {
     color: @alert;
 }
 
+#battery {
+    color: @color6;
+}
+
+#battery.charging, #battery.plugged {
+    color: @color1;
+}
+
 #pulseaudio {
     color: @color5;
 }
