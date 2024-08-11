@@ -43,3 +43,4 @@ starship init zsh
 $(starship init zsh)
 nvim .bashrc 
 nvim .config/zsh/.zshrc 
+python -c 'import os; print(os.urandom(16))'
