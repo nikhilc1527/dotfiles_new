@@ -372,4 +372,41 @@ This command does not push text to `kill-ring'."
   :config
   (org-roam-setup))
 
+;; we recommend using use-package to organize your init.el
+(use-package codeium
+    :init
+    ;; use globally
+    (add-to-list 'completion-at-point-functions #'codeium-completion-at-point)
+
+    :config
+    (setq use-dialog-box nil) ;; do not use popup boxes
+
+    ;; if you don't want to use customize to save the api-key
+    ;; (setq codeium/metadata/api_key "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx")
+
+    ;; get codeium status in the modeline
+    (setq codeium-mode-line-enable
+        (lambda (api) (not (memq api '(CancelRequest Heartbeat AcceptCompletion)))))
+    (add-to-list 'mode-line-format '(:eval (car-safe codeium-mode-line)) t)
+    ;; alternatively for a more extensive mode-line
+    ;; (add-to-list 'mode-line-format '(-50 "" codeium-mode-line) t)
+
+    ;; use M-x codeium-diagnose to see apis/fields that would be sent to the local language server
+    (setq codeium-api-enabled
+        (lambda (api)
+            (memq api '(GetCompletions Heartbeat CancelRequest GetAuthToken RegisterUser auth-redirect AcceptCompletion))))
+
+    ;; You can overwrite all the codeium configs!
+    ;; for example, we recommend limiting the string sent to codeium for better performance
+    ;; (defun my-codeium/document/text ()
+    ;;     (buffer-substring-no-properties (max (- (point) 3000) (point-min)) (min (+ (point) 1000) (point-max))))
+    ;; if you change the text, you should also change the cursor_offset
+    ;; warning: this is measured by UTF-8 encoded bytes
+    ;; (defun my-codeium/document/cursor_offset ()
+    ;;     (codeium-utf8-byte-length
+    ;;         (buffer-substring-no-properties (max (- (point) 3000) (point-min)) (point))))
+    ;; (setq codeium/document/text 'my-codeium/document/text)
+    ;; (setq codeium/document/cursor_offset 'my-codeium/document/cursor_offset)
+      (add-to-list 'company-frontends '(company-preview-frontend)))
+
 (use-package org-journal)
