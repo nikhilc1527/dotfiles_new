@@ -3,7 +3,7 @@
     "position": "top",
     "margin": "15, 15, 0, 15",
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces","custom/separator","cpu","custom/separator","temperature","custom/separator","memory","custom/separator","network"],
+    "modules-left": ["hyprland/workspaces","custom/separator","cpu","custom/separator","temperature","custom/separator","memory","custom/separator","network","custom/separator","battery"],
     "modules-center": ["hyprland/window"],
     "modules-right": [
         "tray",
@@ -15,6 +15,7 @@
     // Modules configuration
     "hyprland/workspaces": {
         "disable-scroll": true,
+	"all-outputs": false,
         "format": "{icon}",
         "format-icons": {
             "1": "1",
@@ -88,7 +89,7 @@
     },
     "temperature": {
         // "thermal-zone": 2,
-        "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
+        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
         "critical-threshold": 70,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{icon}&#8239;{temperatureC}°C",
@@ -104,8 +105,20 @@
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "tooltip-format": "{essid}: {ipaddr}"
     },
+    "battery": {
+    	"states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""],
+	"interval": 1
+    },
     "pulseaudio": {
-      // "scroll-step": 1, // %, can be a float
       "format": "{icon} {volume}% {format_source}",
       "format-bluetooth": "{icon} {volume}% {format_source}",
       "format-bluetooth-muted": " {format_source}",
