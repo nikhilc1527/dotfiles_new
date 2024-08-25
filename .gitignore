@@ -13,6 +13,7 @@
 
 .config/zsh/.zcompdump
 .config/zsh/.zcompcache
+.config/zsh/history
 
 .config/waybar/colors-waybar.css
 .config/hypr/monitors.conf

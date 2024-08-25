@@ -134,6 +134,7 @@
         "car": "",
         "default": ["", "", ""]
       },
+      "max-volume": 100000,
       "on-click": "pavucontrol"
     },
 }
