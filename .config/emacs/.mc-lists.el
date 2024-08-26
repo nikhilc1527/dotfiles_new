@@ -16,6 +16,7 @@
         my-backward-delete-word
         my-delete-word
         org-self-insert-command
+        yaml-electric-backspace
         ))
 
 (setq mc/cmds-to-run-once

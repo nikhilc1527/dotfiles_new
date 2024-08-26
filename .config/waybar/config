@@ -119,6 +119,7 @@
 	"interval": 1
     },
     "pulseaudio": {
+      "max-volume": 100000,
       "format": "{icon} {volume}% {format_source}",
       "format-bluetooth": "{icon} {volume}% {format_source}",
       "format-bluetooth-muted": " {format_source}",
