@@ -1,6 +1,7 @@
 *.ccls-cache
 
 .config/emacs/.local
+.config/emacs/eln-cache
 .config/emacs/elpa
 .config/emacs/modules
 .config/emacs/auto-save-list
@@ -15,3 +16,5 @@
 
 .config/waybar/colors-waybar.css
 .config/hypr/monitors.conf
+
+.local/share/
