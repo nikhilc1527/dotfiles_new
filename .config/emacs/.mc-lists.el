@@ -12,6 +12,7 @@
         haskell-indentation-common-electric-command
         helm-M-x
         indent-for-tab-command
+        markdown-outdent-or-delete
         my-backward-delete-word
         my-delete-word
         org-self-insert-command
