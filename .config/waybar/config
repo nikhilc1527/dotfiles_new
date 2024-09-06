@@ -14,8 +14,6 @@
 
     // Modules configuration
     "hyprland/workspaces": {
-        "disable-scroll": true,
-	"all-outputs": false,
         "format": "{icon}",
         "format-icons": {
             "1": "1",
@@ -53,10 +51,7 @@
     "hyprland/window": {
         "separate-outputs": true,
     },
-    "custom/wmname": {
-        "format": "",
-        "tooltip": false,
-    },
+
     "custom/separator": {
         "format": "|",
         "interval": "once",
@@ -88,16 +83,14 @@
         "critical": 90
     },
     "temperature": {
-        // "thermal-zone": 2,
         "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
         "critical-threshold": 70,
-        // "format-critical": "{temperatureC}°C {icon}",
+        "format-critical": "{temperatureC}°C {icon}",
         "format": "{icon}&#8239;{temperatureC}°C",
         "format-icons": ["", "", ""],
         "interval": 1,
     },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "&#8239;({signalStrength}%)",
         "format-ethernet": "&#8239;{ifname}: {ipaddr}/{cidr}",
         "format-linked": "&#8239;{ifname} (No IP)",

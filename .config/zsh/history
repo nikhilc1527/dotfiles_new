@@ -49,3 +49,6 @@ cd
 EDITOR=nvim visudo
 echo $VISUAL
 SUDO_EDITOR=nvim visudo
+echo $EDITOR
+echo $SUDO_EDITOR
+echo $VISUAL
