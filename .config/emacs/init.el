@@ -1,11 +1,10 @@
 (setq inhibit-startup-screen t)
 
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(require 'package)
+(setq package-enable-at-startup nil)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 (package-refresh-contents)
-
-(require 'package)
-(setq use-package-always-ensure t)
 
 (setq custom-file (concat user-emacs-directory "custom-set.el"))
 (load custom-file 'noerror)
