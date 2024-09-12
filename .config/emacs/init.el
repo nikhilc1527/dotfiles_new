@@ -1,4 +1,3 @@
-
 (require 'package)
 
 (setq inhibit-startup-screen t)
@@ -9,6 +8,7 @@
 
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
+(package-refresh-contents)
 
 (setq custom-file (concat user-emacs-directory "custom-set.el"))
 (load custom-file 'noerror)

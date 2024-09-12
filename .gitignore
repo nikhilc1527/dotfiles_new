@@ -1,16 +1,11 @@
 *.ccls-cache
 
-.config/emacs/.local
-.config/emacs/eln-cache
-.config/emacs/elpa
-.config/emacs/modules
-.config/emacs/auto-save-list
-.config/emacs/.cache
-.config/emacs/backups
-.config/emacs/places
-.config/emacs/tramp
-.config/emacs/.lsp-session-v1
-.config/emacs/eln-cache
+.config/emacs/*
+!.config/emacs/custom-set.el
+!.config/emacs/init.el
+!.config/emacs/java_setup.org
+!.config/emacs/myinit.org
+!.config/emacs/programminginit.org
 
 .config/zsh/.zcompdump
 .config/zsh/.zcompcache
