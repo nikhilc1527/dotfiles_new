@@ -431,6 +431,14 @@ it gives you a small prompt with all possible next key strokes
     ("M-n" . 'move-text-down))
 #+END_SRC
 
+** loccur
+#+BEGIN_SRC emacs-lisp
+  (use-package loccur
+    :bind
+    ("C-o" . 'loccur-current)
+    ("C-S-o" . 'loccur))
+#+END_SRC
+
 * custom made functions
 Clear the buffer in eshell mode
 #+BEGIN_SRC emacs-lisp

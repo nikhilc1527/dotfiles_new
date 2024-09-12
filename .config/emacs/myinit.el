@@ -311,6 +311,11 @@ This command does not push text to `kill-ring'."
   ("M-p" . 'move-text-up)
   ("M-n" . 'move-text-down))
 
+(use-package loccur
+  :bind
+  ("C-o" . 'loccur-current)
+  ("C-S-o" . 'loccur))
+
 ;; (defun save-compile-dwm ()
  ;;   (when (eq (symbol-value buffer-file-name) "/home/nikhil/.local/src/dwm/config.h")
  ;;     (start-process "make && plz make install && kill -HUP $(pgrep -u $USER \"\bdwm$\"")
