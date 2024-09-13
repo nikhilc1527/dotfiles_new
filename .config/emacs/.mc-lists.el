@@ -13,9 +13,12 @@
         haskell-indentation-common-electric-command
         helm-M-x
         indent-for-tab-command
+        markdown-outdent-or-delete
         my-backward-delete-word
         my-delete-word
+        org-delete-char
         org-self-insert-command
+        yaml-electric-backspace
         ))
 
 (setq mc/cmds-to-run-once
@@ -23,5 +26,6 @@
         dap-tooltip-mouse-motion
         lsp-signature-activate
         mouse-drag-region-rectangle
+        org-ctrl-c-ctrl-c
         text-scale-adjust
         ))

@@ -6,8 +6,8 @@
   <property name="pressureMultiplier" value="1"/>
   <property name="zoomGesturesEnabled" value="true"/>
   <property name="selectedToolbar" value="Portrait"/>
-  <property name="lastSavePath" value="/home/haddr"/>
-  <property name="lastOpenPath" value="/home/nikhilc/wisco_22_23/math376/homeworks/week10"/>
+  <property name="lastSavePath" value="$HOME"/>
+  <property name="lastOpenPath" value="$HOME/wisco_22_23/math376/homeworks/week10"/>
   <property name="lastImagePath" value="/home/nikhilc"/>
   <property name="edgePanSpeed" value="20"/>
   <property name="edgePanMaxMult" value="5"/>
