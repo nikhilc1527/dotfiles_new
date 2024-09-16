@@ -215,15 +215,13 @@ Lsp user interface
   :after lsp
   :config
   (add-hook 'java-mode-hook #'lsp))
-  
+
   (use-package dap-mode
     :ensure t
     :after lsp-mode
     :config
     (dap-mode t)
-    (dap-ui-mode t)
-    ;; Optional: enable only if you're using lsp-java
-    (require 'dap-java))
+    (dap-ui-mode t))
 #+END_SRC
 
 * haskell

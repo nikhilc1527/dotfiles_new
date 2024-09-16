@@ -6,7 +6,7 @@
   <property name="pressureMultiplier" value="1"/>
   <property name="zoomGesturesEnabled" value="true"/>
   <property name="selectedToolbar" value="Portrait"/>
-  <property name="lastSavePath" value="$HOME"/>
+  <property name="lastSavePath" value="/home/nikhilc/Nextcloud/2024-2025 Sem1/CS 639/hws/hw1"/>
   <property name="lastOpenPath" value="$HOME/wisco_22_23/math376/homeworks/week10"/>
   <property name="lastImagePath" value="/home/nikhilc"/>
   <property name="edgePanSpeed" value="20"/>
@@ -170,6 +170,10 @@
     <data name="HID 256c:006d Pad pad">
       <attribute name="deviceClass" type="int" value="1"/>
       <attribute name="deviceSource" type="int" value="8"/>
+    </data>
+    <data name="HID 256c:006d Pen">
+      <attribute name="deviceClass" type="int" value="2"/>
+      <attribute name="deviceSource" type="int" value="1"/>
     </data>
     <data name="HID 256c:006d Pen stylus">
       <attribute name="deviceClass" type="int" value="1"/>

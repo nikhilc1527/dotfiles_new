@@ -70,7 +70,6 @@ Load the programming init file
                ("web" (or (mode . web-mode) (mode . js2-mode)))
                ("shell" (or (mode . eshell-mode) (mode . shell-mode)))
                ("mu4e" (or
-
                         (mode . mu4e-compose-mode)
                         (name . "\*mu4e\*")
                         ))
@@ -378,4 +377,12 @@ it gives you a small prompt with all possible next key strokes
 * org journal
 #+BEGIN_SRC emacs-lisp
 (use-package org-journal)
+#+END_SRC
+
+* jump-char
+
+#+BEGIN_SRC emacs-lisp
+        (use-package jump-char
+          :bind
+          ("C-c j" . 'jump-char-forward))
 #+END_SRC
