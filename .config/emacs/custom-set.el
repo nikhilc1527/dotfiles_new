@@ -95,6 +95,7 @@
  '(ibuffer-always-show-predicates nil)
  '(inhibit-startup-screen t)
  '(ivy-mode t)
+ '(java-mode-hook '(lsp-deferred))
  '(line-number-mode nil)
  '(lsp-clangd-binary-path "/usr/bin/clangd")
  '(lsp-clangd-download-url
