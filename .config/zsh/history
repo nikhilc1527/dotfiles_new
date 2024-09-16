@@ -52,3 +52,10 @@ SUDO_EDITOR=nvim visudo
 echo $EDITOR
 echo $SUDO_EDITOR
 echo $VISUAL
+printf "%s" "bla"
+which sh
+ls /usr/bin/sh
+cd /usr/bin/
+sudo rm sh
+sudo ln -s dash sh
+sh
