@@ -5,6 +5,7 @@
       '(
         backward-sexp
         beginning-of-visual-line
+        c-electric-delete-forward
         electric-newline-and-maybe-indent
         electric-pair-delete-pair
         end-of-visual-line

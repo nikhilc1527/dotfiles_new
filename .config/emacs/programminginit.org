@@ -7,9 +7,9 @@
     :diminish company-mode
     :hook ((prog-mode LaTeX-mode latex-mode ess-r-mode) . company-mode)
     :bind
-    (:map company-active-map
-          ([tab] . smarter-yas-expand-next-field-complete)
-          ("TAB" . smarter-yas-expand-next-field-complete))
+    ;; (:map company-active-map
+    ;;       ([tab] . smarter-yas-expand-next-field-complete)
+    ;;       ("TAB" . smarter-yas-expand-next-field-complete))
     :custom
     (company-minimum-prefix-length 1)
     (company-tooltip-align-annotations t)
