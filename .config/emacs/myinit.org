@@ -333,9 +333,10 @@ it gives you a small prompt with all possible next key strokes
 ** move text
 #+BEGIN_SRC emacs-lisp
   (use-package move-text
-    :bind
-    ("M-p" . 'move-text-up)
-    ("M-n" . 'move-text-down))
+    :config
+    (bind-keys*
+     ("M-p" . move-text-up)
+     ("M-n" . move-text-down)))
 #+END_SRC
 
 ** loccur
