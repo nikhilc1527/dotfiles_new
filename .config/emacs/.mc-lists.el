@@ -6,6 +6,9 @@
         backward-sexp
         beginning-of-visual-line
         c-electric-delete-forward
+        c-electric-paren
+        c-electric-semi&comma
+        c-indent-line-or-region
         electric-newline-and-maybe-indent
         electric-pair-delete-pair
         end-of-visual-line
