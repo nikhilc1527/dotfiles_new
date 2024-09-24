@@ -209,10 +209,10 @@ Used for editing files that need sudo privileges
 ** beacon
 When cursor jumps, new cursor position is highlighted so that you dont loose the cursor
 #+BEGIN_SRC emacs-lisp
-(use-package beacon
-  :config
-  (beacon-mode 1)
-  (setq beacon-color "#00aa33"))
+  ;; (use-package beacon
+  ;;   :config
+  ;;   (beacon-mode 1)
+  ;;   (setq beacon-color "#00aa33"))
 #+END_SRC
 
 ** multiple cursors

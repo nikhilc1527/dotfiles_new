@@ -9,6 +9,7 @@
         c-electric-paren
         c-electric-semi&comma
         c-indent-line-or-region
+        completion-kill-region
         electric-newline-and-maybe-indent
         electric-pair-delete-pair
         end-of-visual-line
@@ -20,6 +21,7 @@
         markdown-end-of-line
         markdown-outdent-or-delete
         my-backward-delete-word
+        my-delete-line
         my-delete-word
         org-delete-char
         org-self-insert-command
