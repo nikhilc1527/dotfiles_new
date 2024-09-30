@@ -21,6 +21,7 @@
         markdown-end-of-line
         markdown-outdent-or-delete
         my-backward-delete-word
+        my-delete-line
         my-delete-word
         org-delete-char
         org-self-insert-command
