@@ -9,6 +9,7 @@
         c-electric-paren
         c-electric-semi&comma
         c-indent-line-or-region
+        completion-kill-region
         electric-newline-and-maybe-indent
         electric-pair-delete-pair
         end-of-visual-line
