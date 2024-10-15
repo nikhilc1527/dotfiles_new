@@ -25,6 +25,7 @@
         my-delete-word
         org-delete-char
         org-self-insert-command
+        tex-handle-newline
         wdired--self-insert
         yaml-electric-backspace
         ))

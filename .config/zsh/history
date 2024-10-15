@@ -59,3 +59,801 @@ cd /usr/bin/
 sudo rm sh
 sudo ln -s dash sh
 sh
+#!/bin/bash -li
+if uname -a | grep -q Darwin; then     dafny="/usr/local/lib/dafny/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  elif uname -a | grep -q Linux; then     dafny="/usr/lib/dafny3/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/lib/dafny3/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  else     echo "Verification failed";     exit 1; fi
+### Definition Files 
+echo ""
+echo "Verifying all definition files"
+$dafny types.dfy agents.dfy network.dfy synod.dfy
+### Proof Files
+echo ""
+echo "Verifying proof_validity.dfy"
+$dafny proof_validity.dfy
+echo ""
+echo "Verifying proof_agreement_invariants.dfy"
+$dafny proof_agreement_invariants.dfy
+echo ""
+echo "Verifying proof_axioms.dfy"
+$dafny proof_axioms.dfy
+echo ""
+echo "Verifying proof_helper.dfy"
+$dafny proof_helper.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties1.dfy"
+$dafny proof_agreement_chosenProperties1.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties2.dfy"
+$dafny proof_agreement_chosenProperties2.dfy
+echo ""
+echo "Verifying proof_agreement.dfy"
+$dafny proof_agreement.dfy
+echo "Done"
+#!/bin/bash -li
+if uname -a | grep -q Darwin; then     dafny="/usr/local/lib/dafny/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  elif uname -a | grep -q Linux; then     dafny="/usr/local/lib/dafny3/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny3/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  else     echo "Verification failed";     exit 1; fi
+### Definition Files 
+echo ""
+echo "Verifying all definition files"
+$dafny types.dfy agents.dfy network.dfy synod.dfy
+### Proof Files
+echo ""
+echo "Verifying proof_validity.dfy"
+$dafny proof_validity.dfy
+echo ""
+echo "Verifying proof_agreement_invariants.dfy"
+$dafny proof_agreement_invariants.dfy
+echo ""
+echo "Verifying proof_axioms.dfy"
+$dafny proof_axioms.dfy
+echo ""
+echo "Verifying proof_helper.dfy"
+$dafny proof_helper.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties1.dfy"
+$dafny proof_agreement_chosenProperties1.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties2.dfy"
+$dafny proof_agreement_chosenProperties2.dfy
+echo ""
+echo "Verifying proof_agreement.dfy"
+$dafny proof_agreement.dfy
+echo "Done"
+#!/bin/bash -li
+dafny="./dafny verify"
+### Definition Files 
+echo ""
+echo "Verifying all definition files"
+$dafny types.dfy agents.dfy network.dfy synod.dfy
+### Proof Files
+echo ""
+echo "Verifying proof_validity.dfy"
+$dafny proof_validity.dfy
+echo ""
+echo "Verifying proof_agreement_invariants.dfy"
+$dafny proof_agreement_invariants.dfy
+echo ""
+echo "Verifying proof_axioms.dfy"
+$dafny proof_axioms.dfy
+echo ""
+echo "Verifying proof_helper.dfy"
+$dafny proof_helper.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties1.dfy"
+$dafny proof_agreement_chosenProperties1.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties2.dfy"
+$dafny proof_agreement_chosenProperties2.dfy
+ all definition files"
+$dafny types.dfy agents.dfy network.dfy synod.dfy
+
+
+### Proof Files
+echo ""
+echo "Verifying proof_validity.dfy"
+$dafny proof_validity.dfy
+
+echo ""
+echo "Verifying proof_agreement_invariants.dfy"
+$dafny proof_agreement_invariants.dfy
+
+echo ""
+echo "Verifying proof_axioms.dfy"
+$dafny proof_axioms.dfy
+
+echo ""
+echo "Verifying proof_helper.dfy"
+$dafny proof_helper.dfy
+
+echo ""
+echo "Verifying proof_agreement_chosenProperties1.dfy"
+$dafny proof_agreement_chosenProperties1.dfy
+
+echo ""
+echo "Verifying proof_agreement_chosenProperties2.dfy"
+$dafny proof_agreement_chosenProperties2.dfy
+
+echo ""
+echo "Verifying proof_agreement.dfy"
+$dafny proof_agreement.dfy
+
+echo "Done"
+
+#!/bin/bash -li
+if uname -a | grep -q Darwin; then     dafny="/usr/local/lib/dafny/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  elif uname -a | grep -q Linux; then     dafny="/usr/local/lib/dafny3/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny3/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  else     echo "Verification failed";     exit 1; fi
+dafny="./dafny verify --verification-time-limit=20"
+### Definition Files 
+echo ""
+echo "Verifying all definition files"
+$dafny types.dfy agents.dfy network.dfy synod.dfy
+### Proof Files
+echo ""
+echo "Verifying proof_validity.dfy"
+$dafny proof_validity.dfy
+echo ""
+echo "Verifying proof_agreement_invariants.dfy"
+$dafny proof_agreement_invariants.dfy
+echo ""
+echo "Verifying proof_axioms.dfy"
+$dafny proof_axioms.dfy
+echo ""
+echo "Verifying proof_helper.dfy"
+$dafny proof_helper.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties1.dfy"
+$dafny proof_agreement_chosenProperties1.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties2.dfy"
+$dafny proof_agreement_chosenProperties2.dfy
+echo ""
+echo "Verifying proof_agreement.dfy"
+$dafny proof_agreement.dfy
+echo "Done"
+#!/bin/bash -li
+if uname -a | grep -q Darwin; then     dafny="/usr/local/lib/dafny/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  elif uname -a | grep -q Linux; then     dafny="/usr/local/lib/dafny3/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny3/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  else     echo "Verification failed";     exit 1; fi
+dafny="./dafny verify --solver-path=../../../target/release/ssapper --verification-time-limit=20"
+### Definition Files 
+echo ""
+echo "Verifying all definition files"
+$dafny types.dfy agents.dfy network.dfy synod.dfy
+### Proof Files
+echo ""
+echo "Verifying proof_validity.dfy"
+$dafny proof_validity.dfy
+echo ""
+echo "Verifying proof_agreement_invariants.dfy"
+$dafny proof_agreement_invariants.dfy
+echo ""
+echo "Verifying proof_axioms.dfy"
+$dafny proof_axioms.dfy
+echo ""
+echo "Verifying proof_helper.dfy"
+$dafny proof_helper.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties1.dfy"
+$dafny proof_agreement_chosenProperties1.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties2.dfy"
+$dafny proof_agreement_chosenProperties2.dfy
+echo ""
+echo "Verifying proof_agreement.dfy"
+$dafny proof_agreement.dfy
+echo "Done"
+#!/bin/bash -li
+if uname -a | grep -q Darwin; then     dafny="/usr/local/lib/dafny/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  elif uname -a | grep -q Linux; then     dafny="/usr/local/lib/dafny3/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny3/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  else     echo "Verification failed";     exit 1; fi
+dafny="./dafny verify --solver-path=../../../target/release/ssapper --verification-time-limit=20"
+### Definition Files 
+echo ""
+echo "Verifying all definition files"
+$dafny types.dfy agents.dfy network.dfy synod.dfy
+### Proof Files
+echo ""
+echo "Verifying proof_validity.dfy"
+$dafny proof_validity.dfy
+echo ""
+echo "Verifying proof_agreement_invariants.dfy"
+$dafny proof_agreement_invariants.dfy
+echo ""
+echo "Verifying proof_axioms.dfy"
+$dafny proof_axioms.dfy
+echo ""
+echo "Verifying proof_helper.dfy"
+$dafny proof_helper.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties1.dfy"
+$dafny proof_agreement_chosenProperties1.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties2.dfy"
+$dafny proof_agreement_chosenProperties2.dfy
+echo ""
+echo "Verifying proof_agreement.dfy"
+$dafny proof_agreement.dfy
+echo "Done"
+#!/bin/bash -li
+if uname -a | grep -q Darwin; then     dafny="/usr/local/lib/dafny/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  elif uname -a | grep -q Linux; then     dafny="/usr/local/lib/dafny3/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny3/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  else     echo "Verification failed";     exit 1; fi
+dafny="./dafny verify --solver-path=../../../target/release/ssapper --verification-time-limit=20"
+### Definition Files 
+echo ""
+echo "Verifying all definition files"
+$dafny types.dfy
+$dafny agents.dfy
+$dafny network.dfy
+$dafny synod.dfy
+### Proof Files
+echo ""
+echo "Verifying proof_validity.dfy"
+$dafny proof_validity.dfy
+echo ""
+echo "Verifying proof_agreement_invariants.dfy"
+$dafny proof_agreement_invariants.dfy
+echo ""
+echo "Verifying proof_axioms.dfy"
+$dafny proof_axioms.dfy
+echo ""
+echo "Verifying proof_helper.dfy"
+$dafny proof_helper.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties1.dfy"
+$dafny proof_agreement_chosenProperties1.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties2.dfy"
+$dafny proof_agreement_chosenProperties2.dfy
+echo ""
+echo "Verifying proof_agreement.dfy"
+$dafny proof_agreement.dfy
+echo "Done"
+#!/bin/bash -li
+if uname -a | grep -q Darwin; then     dafny="/usr/local/lib/dafny/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  elif uname -a | grep -q Linux; then     dafny="/usr/local/lib/dafny3/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny3/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  else     echo "Verification failed";     exit 1; fi
+dafny="./dafny verify --solver-path=../../../target/release/ssapper --verification-time-limit=20"
+### Definition Files 
+echo ""
+echo "Verifying all definition files"
+$dafny types.dfy
+$dafny agents.dfy
+$dafny network.dfy
+$dafny synod.dfy
+### Proof Files
+echo ""
+echo "Verifying proof_validity.dfy"
+$dafny proof_validity.dfy
+echo ""
+echo "Verifying proof_agreement_invariants.dfy"
+$dafny proof_agreement_invariants.dfy
+echo ""
+echo "Verifying proof_axioms.dfy"
+$dafny proof_axioms.dfy
+echo ""
+echo "Verifying proof_helper.dfy"
+$dafny proof_helper.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties1.dfy"
+$dafny proof_agreement_chosenProperties1.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties2.dfy"
+$dafny proof_agreement_chosenProperties2.dfy
+echo ""
+echo "Verifying proof_agreement.dfy"
+$dafny proof_agreement.dfy
+echo "Done"
+#!/bin/bash -li
+if uname -a | grep -q Darwin; then     dafny="/usr/local/lib/dafny/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  elif uname -a | grep -q Linux; then     dafny="/usr/local/lib/dafny3/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny3/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  else     echo "Verification failed";     exit 1; fi
+dafny="./dafny verify --solver-path=../../../target/release/ssapper --verification-time-limit=20"
+### Definition Files 
+echo ""
+echo "Verifying all definition files"
+$dafny types.dfy
+$dafny agents.dfy
+$dafny network.dfy
+$dafny synod.dfy
+### Proof Files
+echo ""
+echo "Verifying proof_validity.dfy"
+$dafny proof_validity.dfy
+echo ""
+echo "Verifying proof_agreement_invariants.dfy"
+$dafny proof_agreement_invariants.dfy
+echo ""
+echo "Verifying proof_axioms.dfy"
+$dafny proof_axioms.dfy
+echo ""
+echo "Verifying proof_helper.dfy"
+$dafny proof_helper.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties1.dfy"
+$dafny proof_agreement_chosenProperties1.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties2.dfy"
+$dafny proof_agreement_chosenProperties2.dfy
+echo ""
+echo "Verifying proof_agreement.dfy"
+$dafny proof_agreement.dfy
+echo "Done"
+#!/bin/bash -li
+if uname -a | grep -q Darwin; then     dafny="/usr/local/lib/dafny/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  elif uname -a | grep -q Linux; then     dafny="/usr/local/lib/dafny3/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny3/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  else     echo "Verification failed";     exit 1; fi
+cargo build --release
+dafny="./dafny verify --solver-path=../../../target/release/ssapper --verification-time-limit=20"
+### Definition Files 
+echo ""
+echo "Verifying all definition files"
+$dafny types.dfy
+$dafny agents.dfy
+$dafny network.dfy
+$dafny synod.dfy
+### Proof Files
+echo ""
+echo "Verifying proof_validity.dfy"
+$dafny proof_validity.dfy
+echo ""
+echo "Verifying proof_agreement_invariants.dfy"
+$dafny proof_agreement_invariants.dfy
+echo ""
+echo "Verifying proof_axioms.dfy"
+$dafny proof_axioms.dfy
+echo ""
+echo "Verifying proof_helper.dfy"
+$dafny proof_helper.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties1.dfy"
+$dafny proof_agreement_chosenProperties1.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties2.dfy"
+$dafny proof_agreement_chosenProperties2.dfy
+echo ""
+echo "Verifying proof_agreement.dfy"
+$dafny proof_agreement.dfy
+fying proof_agreement.dfy"
+$dafny proof_agreement.dfy
+
+echo "Done"
+
+#!/bin/bash -li
+if uname -a | grep -q Darwin; then     dafny="/usr/local/lib/dafny/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  elif uname -a | grep -q Linux; then     dafny="/usr/local/lib/dafny3/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny3/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  else     echo "Verification failed";     exit 1; fi
+cargo build --release
+dafny="./dafny verify --solver-path=../../../target/release/ssapper --verification-time-limit=20"
+# dafny="./dafny verify --verification-time-limit=20"
+### Definition Files 
+echo ""
+echo "Verifying all definition files"
+$dafny types.dfy
+$dafny agents.dfy
+$dafny network.dfy
+$dafny synod.dfy
+### Proof Files
+echo ""
+echo "Verifying proof_validity.dfy"
+$dafny proof_validity.dfy
+echo ""
+echo "Verifying proof_agreement_invariants.dfy"
+$dafny proof_agreement_invariants.dfy
+echo ""
+echo "Verifying proof_axioms.dfy"
+$dafny proof_axioms.dfy
+echo ""
+echo "Verifying proof_helper.dfy"
+$dafny proof_helper.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties1.dfy"
+$dafny proof_agreement_chosenProperties1.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties2.dfy"
+$dafny proof_agreement_chosenProperties2.dfy
+echo ""
+echo "Verifying proof_agreement.dfy"
+$dafny proof_agreement.dfy
+echo "Done"
+#!/bin/bash -li
+if uname -a | grep -q Darwin; then     dafny="/usr/local/lib/dafny/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  elif uname -a | grep -q Linux; then     dafny="/usr/local/lib/dafny3/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny3/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  else     echo "Verification failed";     exit 1; fi
+cargo build --release
+dafny="./dafny verify --solver-path=../../../target/release/ssapper --verification-time-limit=20"
+# dafny="./dafny verify --verification-time-limit=20"
+### Definition Files 
+echo ""
+echo "Verifying all definition files"
+$dafny types.dfy
+$dafny agents.dfy
+$dafny network.dfy
+$dafny synod.dfy
+### Proof Files
+echo ""
+echo "Verifying proof_validity.dfy"
+$dafny proof_validity.dfy
+echo ""
+echo "Verifying proof_agreement_invariants.dfy"
+$dafny proof_agreement_invariants.dfy
+echo ""
+echo "Verifying proof_axioms.dfy"
+$dafny proof_axioms.dfy
+echo ""
+echo "Verifying proof_helper.dfy"
+$dafny proof_helper.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties1.dfy"
+$dafny proof_agreement_chosenProperties1.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties2.dfy"
+$dafny proof_agreement_chosenProperties2.dfy
+echo ""
+echo "Verifying proof_agreement.dfy"
+$dafny proof_agreement.dfy
+echo "Done"
+#!/bin/bash -li
+if uname -a | grep -q Darwin; then     dafny="/usr/local/lib/dafny/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  elif uname -a | grep -q Linux; then     dafny="/usr/local/lib/dafny3/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny3/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  else     echo "Verification failed";     exit 1; fi
+cargo build --release
+dafny="./dafny verify --solver-path=../../../target/release/ssapper --verification-time-limit=20"
+# dafny="./dafny verify --verification-time-limit=20"
+### Definition Files 
+echo ""
+echo "Verifying all definition files"
+$dafny types.dfy
+$dafny agents.dfy
+$dafny network.dfy
+$dafny synod.dfy
+### Proof Files
+echo ""
+echo "Verifying proof_validity.dfy"
+$dafny proof_validity.dfy
+echo ""
+echo "Verifying proof_agreement_invariants.dfy"
+$dafny proof_agreement_invariants.dfy
+echo ""
+echo "Verifying proof_axioms.dfy"
+$dafny proof_axioms.dfy
+echo ""
+echo "Verifying proof_helper.dfy"
+$dafny proof_helper.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties1.dfy"
+$dafny proof_agreement_chosenProperties1.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties2.dfy"
+$dafny proof_agreement_chosenProperties2.dfy
+echo ""
+echo "Verifying proof_agreement.dfy"
+$dafny proof_agreement.dfy
+echo "Done"
+#!/bin/bash -li
+if uname -a | grep -q Darwin; then     dafny="/usr/local/lib/dafny/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  elif uname -a | grep -q Linux; then     dafny="/usr/local/lib/dafny3/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny3/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  else     echo "Verification failed";     exit 1; fi
+cargo build --release
+dafny="./dafny verify --solver-path=../../../target/release/ssapper --verification-time-limit=20"
+# dafny="./dafny verify --verification-time-limit=20"
+### Definition Files 
+echo ""
+echo "Verifying all definition files"
+$dafny types.dfy
+$dafny agents.dfy
+$dafny network.dfy
+$dafny synod.dfy
+### Proof Files
+echo ""
+echo "Verifying proof_validity.dfy"
+$dafny proof_validity.dfy
+echo ""
+echo "Verifying proof_agreement_invariants.dfy"
+$dafny proof_agreement_invariants.dfy
+echo ""
+echo "Verifying proof_axioms.dfy"
+$dafny proof_axioms.dfy
+echo ""
+echo "Verifying proof_helper.dfy"
+$dafny proof_helper.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties1.dfy"
+$dafny proof_agreement_chosenProperties1.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties2.dfy"
+$dafny proof_agreement_chosenProperties2.dfy
+echo ""
+echo "Verifying proof_agreement.dfy"
+$dafny proof_agreement.dfy
+echo "Done"
+#!/bin/bash -li
+if uname -a | grep -q Darwin; then     dafny="/usr/local/lib/dafny/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  elif uname -a | grep -q Linux; then     dafny="/usr/local/lib/dafny3/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny3/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  else     echo "Verification failed";     exit 1; fi
+cargo build --release
+dafny="./dafny verify --solver-path=../../../target/release/ssapper --verification-time-limit=20"
+# dafny="./dafny verify --verification-time-limit=20"
+### Definition Files 
+echo ""
+echo "Verifying all definition files"
+$dafny types.dfy
+$dafny agents.dfy
+$dafny network.dfy
+$dafny synod.dfy
+### Proof Files
+echo ""
+echo "Verifying proof_validity.dfy"
+$dafny proof_validity.dfy
+echo ""
+echo "Verifying proof_agreement_invariants.dfy"
+$dafny proof_agreement_invariants.dfy
+echo ""
+echo "Verifying proof_axioms.dfy"
+$dafny proof_axioms.dfy
+echo ""
+echo "Verifying proof_helper.dfy"
+$dafny proof_helper.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties1.dfy"
+$dafny proof_agreement_chosenProperties1.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties2.dfy"
+$dafny proof_agreement_chosenProperties2.dfy
+echo ""
+echo "Verifying proof_agreement.dfy"
+$dafny proof_agreement.dfy
+echo "Done"
+#!/bin/bash -li
+if uname -a | grep -q Darwin; then     dafny="/usr/local/lib/dafny/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  elif uname -a | grep -q Linux; then     dafny="/usr/local/lib/dafny3/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny3/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  else     echo "Verification failed";     exit 1; fi
+cargo build --release
+dafny="./dafny verify --solver-path=../../../target/release/ssapper --verification-time-limit=20"
+# dafny="./dafny verify --verification-time-limit=20"
+### Definition Files 
+echo ""
+echo "Verifying all definition files"
+$dafny types.dfy
+$dafny agents.dfy
+$dafny network.dfy
+$dafny synod.dfy
+### Proof Files
+echo ""
+echo "Verifying proof_validity.dfy"
+$dafny proof_validity.dfy
+echo ""
+echo "Verifying proof_agreement_invariants.dfy"
+$dafny proof_agreement_invariants.dfy
+echo ""
+echo "Verifying proof_axioms.dfy"
+$dafny proof_axioms.dfy
+echo ""
+echo "Verifying proof_helper.dfy"
+$dafny proof_helper.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties1.dfy"
+$dafny proof_agreement_chosenProperties1.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties2.dfy"
+$dafny proof_agreement_chosenProperties2.dfy
+echo ""
+echo "Verifying proof_agreement.dfy"
+$dafny proof_agreement.dfy
+echo "Done"
+#!/bin/bash -li
+if uname -a | grep -q Darwin; then     dafny="/usr/local/lib/dafny/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  elif uname -a | grep -q Linux; then     dafny="/usr/local/lib/dafny3/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny3/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  else     echo "Verification failed";     exit 1; fi
+cargo build --release
+dafny="./dafny verify --solver-path=../../../target/release/ssapper --verification-time-limit=20"
+# dafny="./dafny verify --verification-time-limit=20"
+### Definition Files 
+echo ""
+echo "Verifying all definition files"
+$dafny types.dfy
+$dafny agents.dfy
+$dafny network.dfy
+$dafny synod.dfy
+### Proof Files
+echo ""
+echo "Verifying proof_validity.dfy"
+$dafny proof_validity.dfy
+echo ""
+echo "Verifying proof_agreement_invariants.dfy"
+$dafny proof_agreement_invariants.dfy
+echo ""
+echo "Verifying proof_axioms.dfy"
+$dafny proof_axioms.dfy
+echo ""
+echo "Verifying proof_helper.dfy"
+$dafny proof_helper.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties1.dfy"
+$dafny proof_agreement_chosenProperties1.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties2.dfy"
+$dafny proof_agreement_chosenProperties2.dfy
+echo ""
+echo "Verifying proof_agreement.dfy"
+$dafny proof_agreement.dfy
+echo "Done"
+#!/bin/bash -li
+if uname -a | grep -q Darwin; then     dafny="/usr/local/lib/dafny/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  elif uname -a | grep -q Linux; then     dafny="/usr/local/lib/dafny3/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny3/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  else     echo "Verification failed";     exit 1; fi
+cargo build --release
+dafny="./dafny verify --solver-path=../../../target/release/ssapper --verification-time-limit=20"
+# dafny="./dafny verify --verification-time-limit=20"
+### Definition Files 
+echo ""
+echo "Verifying all definition files"
+$dafny types.dfy
+$dafny agents.dfy
+$dafny network.dfy
+$dafny synod.dfy
+### Proof Files
+echo ""
+echo "Verifying proof_validity.dfy"
+$dafny proof_validity.dfy
+echo ""
+echo "Verifying proof_agreement_invariants.dfy"
+$dafny proof_agreement_invariants.dfy
+echo ""
+echo "Verifying proof_axioms.dfy"
+$dafny proof_axioms.dfy
+echo ""
+echo "Verifying proof_helper.dfy"
+$dafny proof_helper.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties1.dfy"
+$dafny proof_agreement_chosenProperties1.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties2.dfy"
+$dafny proof_agreement_chosenProperties2.dfy
+echo ""
+echo "Verifying proof_agreement.dfy"
+$dafny proof_agreement.dfy
+echo "Done"
+#!/bin/bash -li
+if uname -a | grep -q Darwin; then     dafny="/usr/local/lib/dafny/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  elif uname -a | grep -q Linux; then     dafny="/usr/local/lib/dafny3/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny3/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  else     echo "Verification failed";     exit 1; fi
+cargo build --release
+dafny="./dafny verify --solver-path=../../../target/release/ssapper --verification-time-limit=20"
+# dafny="./dafny verify --verification-time-limit=20"
+### Definition Files 
+echo ""
+echo "Verifying all definition files"
+$dafny types.dfy
+$dafny agents.dfy
+$dafny network.dfy
+$dafny synod.dfy
+### Proof Files
+echo ""
+echo "Verifying proof_validity.dfy"
+$dafny proof_validity.dfy
+echo ""
+echo "Verifying proof_agreement_invariants.dfy"
+$dafny proof_agreement_invariants.dfy
+echo ""
+echo "Verifying proof_axioms.dfy"
+$dafny proof_axioms.dfy
+echo ""
+echo "Verifying proof_helper.dfy"
+$dafny proof_helper.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties1.dfy"
+$dafny proof_agreement_chosenProperties1.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties2.dfy"
+$dafny proof_agreement_chosenProperties2.dfy
+echo ""
+echo "Verifying proof_agreement.dfy"
+$dafny proof_agreement.dfy
+echo "Done"
+#!/bin/bash -li
+if uname -a | grep -q Darwin; then     dafny="/usr/local/lib/dafny/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  elif uname -a | grep -q Linux; then     dafny="/usr/local/lib/dafny3/dafny /timeLimit:20 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";     dafnylong="/usr/local/lib/dafny3/dafny /timeLimit:40 /compile:0  /allowGlobals /noNLarith /autoTriggers:1 /vcsCores:4";  else     echo "Verification failed";     exit 1; fi
+cargo build --release
+dafny="./dafny verify --solver-path=../../../target/release/ssapper --verification-time-limit=20"
+# dafny="./dafny verify --verification-time-limit=20"
+### Definition Files 
+echo ""
+echo "Verifying all definition files"
+$dafny types.dfy
+$dafny agents.dfy
+$dafny network.dfy
+$dafny synod.dfy
+### Proof Files
+echo ""
+echo "Verifying proof_validity.dfy"
+$dafny proof_validity.dfy
+echo ""
+echo "Verifying proof_agreement_invariants.dfy"
+$dafny proof_agreement_invariants.dfy
+echo ""
+echo "Verifying proof_axioms.dfy"
+$dafny proof_axioms.dfy
+echo ""
+echo "Verifying proof_helper.dfy"
+$dafny proof_helper.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties1.dfy"
+$dafny proof_agreement_chosenProperties1.dfy
+echo ""
+echo "Verifying proof_agreement_chosenProperties2.dfy"
+$dafny proof_agreement_chosenProperties2.dfy
+echo ""
+echo "Verifying proof_agreement.dfy"
+$dafny proof_agreement.dfy
+echo "Done"
+echo $dafny
+. ./verify 
+rm cache*
+ls
+echo $dafny
+$dafny ./types.dfy 
+./verify 
+./verify 
+$dafny
+$dafny types.dfy 
+$dafny types.dfy 
+$dafny types.dfy 
+rm cache*
+$dafny types.dfy 
+rm cache*
+$dafny types.dfy 
+$dafny types.dfy 
+cargo run --bin ssapper -- ../../../testing_inputs/small.smt2 
+cargo run --bin ssapper -- ../../../testing_inputs/small.smt2 
+cargo run --bin ssapper -- ../../../testing_inputs/small.smt2 
+cargo run --bin ssapper -- ../../../testing_inputs/small.smt2 
+cargo run --bin ssapper -- ../../../testing_inputs/small.smt2 
+cargo run --bin ssapper -- ../../../testing_inputs/small.smt2 
+cargo run --bin ssapper -- ../../../testing_inputs/small.smt2 
+cargo run --bin ssapper -- ../../../testing_inputs/small.smt2 
+cargo run --bin ssapper -- ../../../testing_inputs/small.smt2 
+$dafny types.dfy 
+cargo build --release
+$dafny types.dfy 
+cargo build --release
+$dafny types.dfy 
+$dafny network.dfy 
+unset SSAPPER_CACHE_FILE 
+$dafny network.dfy 
+./dafny verify network.dfy 
+$dafny network.dfy 
+cargo build --release
+$dafny network.dfy 
+cargo build --release
+$dafny network.dfy 
+cargo build --release
+$dafny network.dfy 
+$dafny network.dfy 
+cargo build --release
+$dafny network.dfy 
+cargo run --bin=ssapper -- -in
+cargo build --release
+$dafny network.dfy 
+cargo build --release
+$dafny network.dfy 
+$dafny network.dfy 
+cargo build --release
+$dafny network.dfy 
+$dafny network.dfy 
+cargo build --release
+$dafny network.dfy 
+cat /tmp/bla.txt 
+wc -l /tmp/bla.txt 
+rm /tmp/bla.txt 
+./verify 
+. ./set
+ls
+. ../../setup.sh 
+./verify 
+rm cache*
+unset SSAPPER_CACHE_FILE 
+./verify 
+ls perf 
+du -hs perf 
+cargo run --bin ssapper-tool -- stats ./perf 
+cargo build --release
+$dafny types.df
+$dafny types.dfy 
+./verify 
+. ../../setup.sh 
+./verify 
+./verify 
+touch cache
+. ./verify 
+echo $dafny
+echo $dafny
+$dafny network.dfy 
+$dafny network.dfy 
+cargo build --release
+$dafny network.dfy 
+$dafny network.dfy 
+cargo build --release
+nvim verify 
+. ./verify 
+nvim ../../setup.sh 
+. ../../setup.sh 
+nvim ../../setup.sh 
+. ../../setup.sh 
+. ../../setup.sh 
+nvim ../../setup.sh 
+run_dafny network.dfy 
+cat /tmp/bla.txt 
+cargo run --bin ssapper -- /tmp/bla.txt 
+z3 /tmp/bla.txt 
+cargo run --bin=ssapper -- /tmp/bla.txt > out1
+ls
+alias dafny="./dafny verify"
+dafny types.dfy

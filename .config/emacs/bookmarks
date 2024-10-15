@@ -1,8 +1,14 @@
-;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("org-capture-last-stored"
+(("hws.md"
+ (filename . "~/Nextcloud/Notes/hws.md")
+ (front-context-string)
+ (rear-context-string . "courses/412516)\n")
+ (position . 2366)
+ (last-modified 26381 11568 915605 744000))
+("org-capture-last-stored"
  (filename . "~/MyFiles/Nikhil/org-roam-files/20211024212948-testing_3.org")
  (front-context-string)
  (rear-context-string . "itle: testing 3\n")

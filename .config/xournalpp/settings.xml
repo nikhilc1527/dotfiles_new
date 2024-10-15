@@ -6,7 +6,7 @@
   <property name="pressureMultiplier" value="1"/>
   <property name="zoomGesturesEnabled" value="true"/>
   <property name="selectedToolbar" value="Portrait"/>
-  <property name="lastSavePath" value="/home/nikhilc/Nextcloud/JavaClasses/benaustin/src"/>
+  <property name="lastSavePath" value="/home/nikhilc/Nextcloud/2024-2025 Sem1/Math 623/hws/hw5"/>
   <property name="lastOpenPath" value="/home/nikhilc/Downloads"/>
   <property name="lastImagePath" value="/home/nikhilc"/>
   <property name="edgePanSpeed" value="20"/>
@@ -253,7 +253,7 @@
     <attribute name="count" type="int" value="9"/>
   </data>
   <data name="tools">
-    <attribute name="current" type="string" value="eraser"/>
+    <attribute name="current" type="string" value="pen"/>
     <data name="drawArrow">
       <attribute name="drawingType" type="string" value="default"/>
     </data>
@@ -291,7 +291,7 @@
       <attribute name="drawingType" type="string" value="default"/>
     </data>
     <data name="pen">
-      <attribute name="color" type="hex" value="ffffff"/>
+      <attribute name="color" type="hex" value="00c0ff"/>
       <attribute name="drawingType" type="string" value="default"/>
       <attribute name="fill" type="int" value="0"/>
       <attribute name="fillAlpha" type="int" value="128"/>
