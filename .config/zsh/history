@@ -857,3 +857,4 @@ cargo run --bin=ssapper -- /tmp/bla.txt > out1
 ls
 alias dafny="./dafny verify"
 dafny types.dfy
+ls
