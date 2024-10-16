@@ -33,6 +33,7 @@
 (setq mc/cmds-to-run-once
       '(
         dap-tooltip-mouse-motion
+        helm-confirm-and-exit-minibuffer
         loccur-current
         lsp-signature-activate
         lsp-ui-doc--handle-mouse-movement

@@ -1,4 +1,4 @@
-# ([ "$(tty)" = "/dev/tty1" ] && startx)
+[[ $TERM == "tramp" ]] && unsetopt zle && PS1='$ ' && return
 
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="mm/dd/yyyy"
@@ -27,6 +27,8 @@ bindkey -e
 alias src='source ~/.config/zsh/.zshrc'
 
 eval "$(starship init zsh)"
+
+# [ $TERM = "dumb" ] && unsetopt zle && PS1='$ '
 
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 
