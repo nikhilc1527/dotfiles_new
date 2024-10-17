@@ -2,7 +2,13 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("hws.md"
+(("Students Debts.md"
+ (filename . "~/Nextcloud/Notes/AP Guidance/Students Debts.md")
+ (front-context-string . "\n- Kshitij\n  - 1")
+ (rear-context-string . "- Danica\n  - utd")
+ (position . 17)
+ (last-modified 26383 13564 118449 805000))
+("hws.md"
  (filename . "~/Nextcloud/Notes/hws.md")
  (front-context-string)
  (rear-context-string . "courses/412516)\n")
