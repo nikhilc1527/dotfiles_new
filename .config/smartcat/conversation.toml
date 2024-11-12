@@ -7,33 +7,169 @@ content = "You are an extremely skilled programmer with a keen eye for detail an
 
 [[messages]]
 role = "user"
-content = "how do i remove the last commit from my git commit history"
+content = '''
+generate a one-line commit message for these changesdiff --git a/dafny_testing/setup.sh b/dafny_testing/setup.sh
+index c267bc8..687572a 100755
+--- a/dafny_testing/setup.sh
++++ b/dafny_testing/setup.sh
+@@ -2,6 +2,7 @@
+ 
+ export SSAPPER_CACHE_FILE=./cache
+ export SSAPPER_PERF_FILE=./perf
++export SSAPPER_SOLVER_PATH=/tmp/z3-4.13.3-x64-glibc-2.35/bin/z3
+ 
+ alias ssapper="cargo run --bin=ssapper --"
+ alias perfs="cargo run --bin=ssapper-tool -- stats --summary $SSAPPER_PERF_FILE"
+diff --git a/dafny_testing/verify b/dafny_testing/verify
+index 9747271..abe3bbe 100755
+--- a/dafny_testing/verify
++++ b/dafny_testing/verify
+@@ -30,33 +30,33 @@ echo "Verifying all definition files"
+ dafny types.dfy agents.dfy network.dfy synod.dfy
+ 
+ 
+-# # Proof Files
+-# echo ""
+-# echo "Verifying proof_validity.dfy"
+-# dafny proof_validity.dfy
+-
+-# echo ""
+-# echo "Verifying proof_agreement_invariants.dfy"
+-# dafny proof_agreement_invariants.dfy
+-
+-# echo ""
+-# echo "Verifying proof_axioms.dfy"
+-# dafny proof_axioms.dfy
+-
+-# echo ""
+-# echo "Verifying proof_helper.dfy"
+-# dafny proof_helper.dfy
+-
+-# echo ""
+-# echo "Verifying proof_agreement_chosenProperties1.dfy"
+-# dafny proof_agreement_chosenProperties1.dfy
+-
+-# echo ""
+-# echo "Verifying proof_agreement_chosenProperties2.dfy"
+-# dafny proof_agreement_chosenProperties2.dfy
+-
+-# echo ""
+-# echo "Verifying proof_agreement.dfy"
+-# dafny proof_agreement.dfy
++# Proof Files
++echo ""
++echo "Verifying proof_validity.dfy"
++dafny proof_validity.dfy
++
++echo ""
++echo "Verifying proof_agreement_invariants.dfy"
++dafny proof_agreement_invariants.dfy
++
++echo ""
++echo "Verifying proof_axioms.dfy"
++dafny proof_axioms.dfy
++
++echo ""
++echo "Verifying proof_helper.dfy"
++dafny proof_helper.dfy
++
++echo ""
++echo "Verifying proof_agreement_chosenProperties1.dfy"
++dafny proof_agreement_chosenProperties1.dfy
++
++echo ""
++echo "Verifying proof_agreement_chosenProperties2.dfy"
++dafny proof_agreement_chosenProperties2.dfy
++
++echo ""
++echo "Verifying proof_agreement.dfy"
++dafny proof_agreement.dfy
+ 
+ echo "Done"
+diff --git a/lib/ssapper.rs b/lib/ssapper.rs
+index 0a89e59..a6b425b 100644
+--- a/lib/ssapper.rs
++++ b/lib/ssapper.rs
+@@ -392,6 +392,7 @@ fn next_sexp(
+                 parser.running = parser.running[..ind].to_string();
+                 break;
+             }
++
+             if parser.line_has_stuff && parser.par_balance == 0 {
+                 parser.line_has_stuff = false;
+                 let cur = &parser.running[..=ind];
+diff --git a/src/main.rs b/src/main.rs
+index 38d6e18..0b07fb3 100644
+--- a/src/main.rs
++++ b/src/main.rs
+@@ -1,7 +1,7 @@
+ use std::{
+     env,
+-    fs::{File, OpenOptions},
+-    io::{stdin, BufRead, BufReader, Write},
++    fs::File,
++    io::{stdin, BufRead, BufReader},
+     process::Command,
+ };
+ 
+@@ -32,14 +32,11 @@ fn main() -> anyhow::Result<()> {
+     let cli = Cli::parse();
+     let mut opts = cli.opts;
+ 
+-    let z3_path: String = match env::var("SSAPPER_SOLVER_PATH") {
++    // let z3_path: String =
++    //     env::var("SSAPPER_SOLVER_PATH").unwrap_or(which("z3")?.to_str().unwrap().to_string());
++    let z3_path = match env::var("SSAPPER_SOLVER_PATH") {
+         Ok(path) => path,
+-        _ => {
+-            let p = which("z3")?;
+-            p.to_str()
+-                .ok_or(anyhow!("couldnt construct z3 path"))?
+-                .to_string()
+-        }
++        Err(_) => which("z3")?.to_str().unwrap().to_string(),
+     };
+ 
+     Z3_CHECKSUM.set(digest(&z3_path)).map_err(|e| anyhow!(e))?;
+diff --git a/test.sh b/test.sh
+index e10dec3..689626b 100755
+--- a/test.sh
++++ b/test.sh
+@@ -1,20 +1,6 @@
+-#!/usr/bin/env sh
++#!/bin/sh
+ 
+-export SSAPPER_CACHE_FILE=/tmp/bla
++set -x
+ 
+-cargo build --release || exit $?
+-rm out/*
+-
+-# ./target/debug/ssapper -s z3\ -in -- -i ./testing_inputs/handmade/in1 -o out/out1
+-# ./target/debug/ssapper -s z3\ -in -- -i ./testing_inputs/handmade/in2 -o out/out2
+-# ./target/debug/ssapper -s z3\ -in -- -i ./testing_inputs/handmade/in3 -o out/out3
+-# ./target/debug/ssapper -s z3\ -in -- -i ./testing_inputs/handmade/in3 -o out/out4
+-
+-# stainless 635 min error diff
+-find testing_inputs/stainless_benchmarks/ -type f | parallel ./test_single.sh 
+-# find testing_inputs/stainless_benchmarks/ -exec ./test_single.sh {} \;
+-
+-# for f in $(find ./testing_inputs/QF_NIA/ -type f -name "*.smt2");
+-# do
+-#     ./target/debug/ssapper -s z3\ -in z3\ -in z3\ -in -- -i "$f" -o out/$(basename "$f")
+-# done
++dafny verify --disable-nonlinear-arithmetic --verification-time-limit 20 daisy-nfsd/src/util/marshal.i.dfy
++dafny verify --solver-path /usr/bin/z3 --disable-nonlinear-arithmetic --verification-time-limit 20 daisy-nfsd/src/util/marshal.i.dfy
+'''
 
 [[messages]]
 role = "assistant"
-content = """
-To remove the last commit from your Git commit history, you can use the `git reset` command with the `--hard` option followed by the commit hash of the commit you want to reset to (which is the commit before the one you want to remove).
+content = "Uncomment dafny verification lines in bash script"
 
-Here are the steps:
+[[messages]]
+role = "user"
+content = "prioritize the rs files for the message"
 
-1. Open your terminal and navigate to your Git repository.
-
-2. Find the commit hash of the commit you want to reset to (the one before the last commit you want to remove). You can use the `git log` command to view the commit history and copy the relevant commit hash.
-
-3. Run the following command, replacing `<commit-hash>` with the actual commit hash you want to reset to:
-
-git reset --hard <commit-hash>
-
-For example, if the commit hash you want to reset to is `a1b2c3d`, you would run:
-
-git reset --hard a1b2c3d
-
-4. After running the command, your repository will be reset to the state of the specified commit, effectively removing the last commit from the history.
-
-Note: Be cautious when using `git reset --hard` as it permanently discards any changes made in the commits after the specified commit. Make sure you have a backup or are certain you want to remove the commit(s) before proceeding.
-
-If you have already pushed the commit you want to remove to a remote repository, you will need to force push the changes after resetting:
-
-git push -f
-
-However, be extremely careful with force pushing, especially if others are collaborating on the same repository, as it can cause issues for them."""
+[[messages]]
+role = "assistant"
+content = "Update z3 path handling and uncomment verification lines"

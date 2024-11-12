@@ -6,7 +6,7 @@
   <property name="pressureMultiplier" value="1"/>
   <property name="zoomGesturesEnabled" value="true"/>
   <property name="selectedToolbar" value="Portrait"/>
-  <property name="lastSavePath" value="/home/nikhilc/Nextcloud/2024-2025 Sem1/Math 623/hws/hw5"/>
+  <property name="lastSavePath" value="/home/nikhilc/Nextcloud/2024-2025 Sem1/Math 623/hws/hw8"/>
   <property name="lastOpenPath" value="/home/nikhilc/Downloads"/>
   <property name="lastImagePath" value="/home/nikhilc"/>
   <property name="edgePanSpeed" value="20"/>
@@ -48,12 +48,13 @@
   <property name="eraserVisibility" value="always"/>
   <!--The icon theme, allowed values are "iconsColor", "iconsLucide"-->
   <property name="iconTheme" value="iconsColor"/>
+  <!--Dark/light mode, allowed values are "useSystem", "forceLight", "forceDark"-->
+  <property name="themeVariant" value="useSystem"/>
   <property name="highlightPosition" value="false"/>
   <property name="cursorHighlightColor" value="2164260608"/>
   <property name="cursorHighlightBorderColor" value="2147483903"/>
   <property name="cursorHighlightRadius" value="30"/>
   <property name="cursorHighlightBorderWidth" value="0"/>
-  <property name="darkTheme" value="true"/>
   <property name="useStockIcons" value="false"/>
   <property name="disableScrollbarFadeout" value="false"/>
   <property name="disableAudio" value="false"/>
@@ -62,7 +63,7 @@
   <property name="autoloadMostRecent" value="false"/>
   <property name="autoloadPdfXoj" value="true"/>
   <property name="defaultSaveName" value="%Y_%m_%d"/>
-  <property name="defaultPdfExportName" value="%{name}_annotated"/>
+  <property name="defaultPdfExportName" value="%{name}"/>
   <property name="autosaveEnabled" value="true"/>
   <property name="autosaveTimeout" value="1"/>
   <property name="addHorizontalSpace" value="false"/>
@@ -158,7 +159,7 @@
       <attribute name="tool" type="string" value="eraser"/>
     </data>
     <data name="stylus2">
-      <attribute name="tool" type="string" value="none"/>
+      <attribute name="tool" type="string" value="selectRect"/>
     </data>
     <data name="touch">
       <attribute name="device" type="string" value=""/>
@@ -174,6 +175,10 @@
     <data name="HID 256c:006d Pen">
       <attribute name="deviceClass" type="int" value="2"/>
       <attribute name="deviceSource" type="int" value="1"/>
+    </data>
+    <data name="HID 256c:006d Pen (Eraser)">
+      <attribute name="deviceClass" type="int" value="3"/>
+      <attribute name="deviceSource" type="int" value="2"/>
     </data>
     <data name="HID 256c:006d Pen stylus">
       <attribute name="deviceClass" type="int" value="1"/>
@@ -291,7 +296,7 @@
       <attribute name="drawingType" type="string" value="default"/>
     </data>
     <data name="pen">
-      <attribute name="color" type="hex" value="00c0ff"/>
+      <attribute name="color" type="hex" value="000000"/>
       <attribute name="drawingType" type="string" value="default"/>
       <attribute name="fill" type="int" value="0"/>
       <attribute name="fillAlpha" type="int" value="128"/>

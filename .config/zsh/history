@@ -858,3 +858,10 @@ ls
 alias dafny="./dafny verify"
 dafny types.dfy
 ls
+cd /tmp/
+git clone git@git.doit.wisc.edu:cdis/cs/courses/cs320/cs320-fa24-students/pkathuria/labs-and-projects.git
+git clone git@git.doit.wisc.edu:cdis/cs/courses/cs320/cs320-fa24-students/pkathuria/labs-and-projects.git
+git clone git@git.doit.wisc.edu:cdis/cs/courses/cs320/cs320-fa24-students/labs-and-projects.git
+git clone git@git.doit.wisc.edu:cdis/cs/courses/cs320/cs320-fa24-students/bla.git
+git clone git@git.doit.wisc.edu:cdis/cs/courses/cs320/cs320-fa24-students/bla.git
+ssh nikhilc@2.tcp.ngrok.io -p 13809
