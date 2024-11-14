@@ -6,7 +6,7 @@
 
 /usr/bin/cat ~/.cache/wal/sequences
 
-nerdfetch
+fastfetch
 
 source $HOME/.profile
 
