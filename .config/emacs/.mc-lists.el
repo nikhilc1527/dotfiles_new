@@ -25,6 +25,7 @@
         my-delete-word
         org-delete-char
         org-self-insert-command
+        revert-buffer
         tex-handle-newline
         wdired--self-insert
         yaml-electric-backspace
@@ -33,6 +34,11 @@
 (setq mc/cmds-to-run-once
       '(
         dap-tooltip-mouse-motion
+        dired-clean-directory
+        dired-next-line
+        dired-previous-line
+        dired-toggle-read-only
+        end-of-buffer
         helm-confirm-and-exit-minibuffer
         loccur-current
         lsp-signature-activate
@@ -40,4 +46,5 @@
         mouse-drag-region-rectangle
         org-ctrl-c-ctrl-c
         text-scale-adjust
+        wdired-finish-edit
         ))
