@@ -865,3 +865,7 @@ git clone git@git.doit.wisc.edu:cdis/cs/courses/cs320/cs320-fa24-students/labs-a
 git clone git@git.doit.wisc.edu:cdis/cs/courses/cs320/cs320-fa24-students/bla.git
 git clone git@git.doit.wisc.edu:cdis/cs/courses/cs320/cs320-fa24-students/bla.git
 ssh nikhilc@2.tcp.ngrok.io -p 13809
+curl 10.0.0.37:7865
+ping 10.0.0.37
+curl 10.0.0.37:7865
+curl 10.0.0.37:7865
