@@ -5,6 +5,7 @@
       '(
         backward-sexp
         beginning-of-visual-line
+        c-electric-colon
         c-electric-delete-forward
         c-electric-paren
         c-electric-semi&comma

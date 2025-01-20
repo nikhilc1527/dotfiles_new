@@ -30,7 +30,5 @@ eval "$(starship init zsh)"
 
 # [ $TERM = "dumb" ] && unsetopt zle && PS1='$ '
 
-[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
-
 preexec() { print -Pn "\e]0;$1\a" }
 precmd() { print -Pn "\e]0;%n@%M:%~\a" }

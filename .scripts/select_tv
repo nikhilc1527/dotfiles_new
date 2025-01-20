@@ -1,0 +1,7 @@
+#!/bin/sh
+
+TMPFILE=$(mktemp)
+
+alacritty -e sh -c "tv > $TMPFILE"
+
+cat "$TMPFILE"
