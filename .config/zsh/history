@@ -869,3 +869,7 @@ curl 10.0.0.37:7865
 ping 10.0.0.37
 curl 10.0.0.37:7865
 curl 10.0.0.37:7865
+exec 5>&1
+output=$(go run *.go -mode=test -name=real-nginx-pod -image=hello-world-go -type=pod -namespace=default | tee /dev/fd/5)
+echo $output 
+echo "$output"
