@@ -19,11 +19,21 @@
  '(clang-format+-context 'buffer)
  '(clang-format-executable "clang-format")
  '(clang-format-style "Google")
+ '(company-backends
+   '(company-irony company-capf company-capf company-bbdb company-cmake company-capf company-clang company-files
+                   (company-dabbrev-code company-gtags company-etags company-keywords)
+                   company-oddmuse company-dabbrev))
+ '(company-frontends
+   '(company-pseudo-tooltip-unless-just-one-frontend company-echo-metadata-frontend company-preview-frontend))
  '(company-meghanada-insert-args t)
  '(company-meghanada-prefix-length 2)
  '(company-show-quick-access t nil nil "Customized with use-package company")
+ '(company-transformers '(company-sort-by-backend-importance))
  '(compilation-auto-jump-to-first-error t)
  '(compile-command "make -B")
+ '(completion-preview-minimum-symbol-length nil)
+ '(copilot-idle-delay 0.1)
+ '(copilot-indent-offset-warning-disable t)
  '(custom-safe-themes
    '("835868dcd17131ba8b9619d14c67c127aa18b90a82438c8613586331129dda63" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" "a325ba05dc3b5c2fa89af0ff354bbbe90251fb1a6e6d5682977cebe61ce72ab7" default))
  '(dap-auto-configure-features
@@ -89,6 +99,7 @@
  '(gdb-many-windows nil)
  '(gdb-stopped-functions nil)
  '(global-auto-complete-mode nil)
+ '(global-completion-preview-mode t)
  '(global-display-line-numbers-mode t)
  '(global-fira-code-mode nil)
  '(global-linum-mode nil)
@@ -172,7 +183,7 @@
  '(org-src-fontify-natively t)
  '(org-todo-keywords '((sequence "TODO" "DONE")))
  '(package-selected-packages
-   '(ellama eat go gptel csv-mode jump-char yasnippet-snippets ace-window competitive-programming-snippets license-snippets py-snippets dap-mode loccur move-text pylint typescript-mode treesit-auto drag-stuff ace-jump-helm-line ivy all-the-icons js-format tramp-theme tramp tramp-auto-auth tramp-hdfs tramp-nspawn tramp-term auto-sudoedit helm-tramp graphviz-dot-mode dot-mode centered-cursor-mode dracula-theme darcula-theme ssh ansi direx fira-code-mode fixmee vterm visual-regexp-steroids visual-regexp selectrum nasm-mode org-roam rainbow-identifiers rainbow-delimiters yaml markdownfmt treemacs-magit haskell-emacs-base dockerfile-mode docker-compose-mode docker protobuf-mode mu4e-alert mu4e-column-faces mu4e-conversation mu4e-jump-to-list mu4e-maildirs-extension mu4e-marker-icons mu4e-overview mu4e-query-fragments mu4e-views yaml-mode ranger powerline ghci-completion company-ghci flycheck-haskell haskell-tab-indent haskell-snippets lsp-haskell haskell-emacs haskell-mode lsp-mode highlight inline-crypt cryptol-mode erc-crypt autocrypt pg doom-themes org-journal-list org-journal flycheck-aspell helm-flyspell ac-ispell helm-ispell unicode-fonts darkroom olivetti ace-jump-buffer ace-jump-zap ace-jump-mode ## sass-mode undo-tree auctex-lua company-auctex simple-httpd js2-mode skewer-mode d-mode company-lua lua-mode color-theme iedit aggressive-indent electric-operator crux zenburn-theme srefactor ll-debug company-capf cmake-ide cmake-mode meghanada bash-completion gotham-theme calmer-forest-theme forest-blue-theme color-theme-sanityinc-solarized solarized-theme gruvbox-theme sublime-themes org-super-agenda org-fragtog flycheck-clang-tidy makey make-it-so clang-format+ clang-format glsl-mode makefile-executor image+ helm-make org-outline-numbering git-link groovy-mode flycheck-gradle gradle-mode toml toml-mode cargo flycheck-rust lsp-origami origami flycheck-irony multiple-cursors beacon expand-region flycheck helm helm-fish-completion fish-mode lsp-intellij golden-ratio nyan-mode web-mode eshell-git-prompt fish-completion exec-path-from-shell hydra company-irony git-gutter+ git-gutter idle-highlight-mode lsp-java lsp-ccls magit helm-lsp projectile flyspell-correct dap-java fireplace lsp-ui ccls xwidgete orgalist latex-pretty-symbols company-emoji auto-complete virtualenvwrapper elpy try ox-reveal zeno misc golden-ratio-mode auto-complete-config helm-config org-mode php-mode go-mode rust-mode which-key htmlize windswap markdown-mode+ markdown-preview-mode info-beamer org-edit-latex org-bullets helm-c-yasnippet engine-mode multi-term mandm-theme use-package dired-rainbow leetcode zeno-theme sexy-monochrome-theme reverse-theme minimal-theme github-modern-theme helm-file-preview company-c-headers sr-speedbar imenus helm-gtags function-args ggtags floobits sudo-edit modern-cpp-font-lock dummyparens smartparens duplicate-thing yasnippet company monokai-pro-theme))
+   '(## ac-ispell ace-jump-buffer ace-jump-helm-line ace-jump-mode ace-jump-zap ace-window aggressive-indent all-the-icons ansi auctex-lua auto-complete auto-complete-config auto-sudoedit autocrypt bash-completion beacon calmer-forest-theme cargo ccls centered-cursor-mode clang-format clang-format+ cmake-ide cmake-mode color-theme color-theme-sanityinc-solarized company company-auctex company-c-headers company-capf company-emoji company-ghci company-irony company-lua competitive-programming-snippets copilot crux cryptol-mode csv-mode d-mode dap-java dap-mode darcula-theme darkroom dired-rainbow direx docker docker-compose-mode dockerfile-mode doom-themes dot-mode dracula-theme drag-stuff dummyparens duplicate-thing eat electric-operator ellama elpy engine-mode erc-crypt eshell-git-prompt exec-path-from-shell expand-region find-temp-file fira-code-mode fireplace fish-completion fish-mode fixmee floobits flycheck flycheck-aspell flycheck-clang-tidy flycheck-gradle flycheck-haskell flycheck-irony flycheck-rust flyspell-correct forest-blue-theme function-args ggtags ghci-completion git-gutter git-gutter+ git-link github-modern-theme glsl-mode go go-mode golden-ratio golden-ratio-mode gotham-theme gptel gradle-mode graphviz-dot-mode groovy-mode gruvbox-theme haskell-emacs haskell-emacs-base haskell-mode haskell-snippets haskell-tab-indent helm helm-c-yasnippet helm-config helm-file-preview helm-fish-completion helm-flyspell helm-gtags helm-ispell helm-lsp helm-make helm-tramp highlight htmlize hydra idle-highlight-mode iedit image+ imenus info-beamer inline-crypt ivy js-format js2-mode jump-char latex-pretty-symbols leetcode license-snippets ll-debug loccur lsp-ccls lsp-haskell lsp-intellij lsp-java lsp-mode lsp-origami lsp-ui lua-mode magit make-it-so makefile-executor makey mandm-theme markdown-mode+ markdown-preview-mode markdownfmt meghanada minimal-theme misc modern-cpp-font-lock monokai-pro-theme move-text mu4e-alert mu4e-column-faces mu4e-conversation mu4e-jump-to-list mu4e-maildirs-extension mu4e-marker-icons mu4e-overview mu4e-query-fragments mu4e-views multi-term multiple-cursors nasm-mode nyan-mode olivetti org-bullets org-edit-latex org-fragtog org-journal org-journal-list org-mode org-outline-numbering org-roam org-super-agenda orgalist origami ox-reveal pg php-mode powerline projectile protobuf-mode py-snippets pylint rainbow-delimiters rainbow-identifiers ranger reverse-theme rust-mode sass-mode selectrum sexy-monochrome-theme simple-httpd skewer-mode smartparens solarized-theme sr-speedbar srefactor ssh sublime-themes sudo-edit toml toml-mode tramp tramp-auto-auth tramp-hdfs tramp-nspawn tramp-term tramp-theme treemacs-magit treesit-auto try typescript-mode undo-tree unicode-fonts use-package virtualenvwrapper visual-regexp visual-regexp-steroids vterm web-mode which-key windswap xwidgete yaml yaml-mode yasnippet yasnippet-snippets zenburn-theme zeno zeno-theme))
  '(rust-format-on-save t)
  '(rustic-analyzer-command '("/usr/lib/rustup/bin/rust-analyzer"))
  '(rustic-lsp-format t)
