@@ -32,3 +32,5 @@ eval "$(starship init zsh)"
 
 preexec() { print -Pn "\e]0;$1\a" }
 precmd() { print -Pn "\e]0;%n@%M:%~\a" }
+
+source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
