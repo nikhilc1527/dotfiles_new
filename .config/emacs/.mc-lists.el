@@ -9,8 +9,10 @@
         c-electric-delete-forward
         c-electric-paren
         c-electric-semi&comma
+        c-electric-star
         c-indent-line-or-region
         completion-kill-region
+        copilot-accept-completion
         electric-newline-and-maybe-indent
         electric-pair-delete-pair
         end-of-visual-line

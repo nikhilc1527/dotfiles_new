@@ -34,3 +34,12 @@ preexec() { print -Pn "\e]0;$1\a" }
 precmd() { print -Pn "\e]0;%n@%M:%~\a" }
 
 source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/home/nikhilc/.opam/opam-init/init.zsh' ]] || source '/home/nikhilc/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
