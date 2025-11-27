@@ -11,6 +11,7 @@
         c-electric-semi&comma
         c-indent-line-or-region
         completion-kill-region
+        coq-terminator-insert
         electric-newline-and-maybe-indent
         electric-pair-delete-pair
         end-of-visual-line
