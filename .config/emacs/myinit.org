@@ -2,10 +2,24 @@
 
 * use-package
 #+BEGIN_SRC emacs-lisp
-  (unless (package-installed-p 'use-package)
-    (package-refresh-contents)
-    (package-install 'use-package))
-(setq use-package-always-ensure t)
+    (unless (package-installed-p 'use-package)
+      (package-refresh-contents)
+      (package-install 'use-package))
+  (setq use-package-always-ensure t)
+#+END_SRC
+
+* auto package update
+#+BEGIN_SRC emacs-lisp
+
+  (use-package auto-package-update
+    :ensure t
+    :config
+    (setq auto-package-update-interval 3)   ; days
+    (setq auto-package-update-prompt-before-update t)
+    (setq auto-package-update-delete-old-versions t)
+    (setq auto-package-update-hide-results t)
+    (auto-package-update-maybe))
+
 #+END_SRC
 
 * helm
@@ -142,7 +156,7 @@ Load the programming init file
        (set-language-environment "UTF-8")
 
       ;; (set-frame-parameter (selected-frame) 'alpha '(85 50))
-  (set-frame-parameter nil 'alpha-background 85)
+  (set-frame-parameter nil 'alpha-background 100)
 
     (global-auto-revert-mode t)
   (setq dired-dwim-target t)

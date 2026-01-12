@@ -235,10 +235,73 @@ Lsp user interface
 
 * copilot
 #+BEGIN_SRC emacs-lisp
-    (use-package copilot
-      :config
-      (global-copilot-mode 1)
-      (define-key copilot-completion-map (kbd "C-<tab>") 'copilot-accept-completion)
-      (define-key copilot-completion-map (kbd "C-M-<tab>") 'copilot-accept-completion-by-word)
-      :ensure t)
+  (use-package copilot
+    :config
+    ;; (global-copilot-mode 1)
+    (define-key copilot-completion-map (kbd "C-<tab>") 'copilot-accept-completion)
+    (define-key copilot-completion-map (kbd "C-M-<tab>") 'copilot-accept-completion-by-word)
+    :hook ((prog-mode text-mode) . copilot-mode)
+    :ensure t)
+#+END_SRC
+
+* proof-general
+#+BEGIN_SRC emacs-lisp
+  ;; (use-package rocq-mode
+  ;;   :vc (:url "https://codeberg.org/jpoiret/rocq-mode.el.git"
+  ;;             :rev :newest)
+  ;;   ;; :mode "\\.v\\'"
+  ;;   :hook
+  ;;   (rocq-mode . rocq-follow-viewport-mode)
+  ;;   (rocq-mode . rocq-auto-goals-at-point-mode)
+  ;;   :config
+  ;;   (add-to-list 'eglot-server-programs
+  ;;                '(rocq-mode . ("coq-lsp")))
+
+  ;;   ;; Tell lsp-mode how to start coq-lsp
+  ;;   (lsp-register-client
+  ;;    (make-lsp-client
+  ;;     :new-connection (lsp-stdio-connection
+  ;;                      '("coq-lsp"))
+  ;;     :activation-fn (lsp-activate-on "rocq")
+  ;;     :server-id 'coq-lsp))
+  ;;   )
+
+  ;; ;; Proof General (includes Coq mode)
+  (use-package proof-general
+    :ensure t
+    :hook (coq-mode . (lambda ()
+                        (local-set-key (kbd "C-c C-k")
+                                       #'proof-assert-until-point-interactive)))
+    :config
+    ;; General Proof General settings
+    (setq proof-splash-enable nil)          ;; Disable splash screen
+    (setq proof-three-window-mode-policy 'hybrid)
+    (setq coq-smie-user-tokens
+          '(("," . ":=")
+            ("∗" . "->")
+            ("-∗" . "->")
+            ("∗-∗" . "->")
+            ("==∗" . "->")
+            ("=∗" . "->") 			;; Hack to match ={E1,E2}=∗
+            ("|==>" . ":=")
+            ("⊢" . "->")
+            ("⊣⊢" . "->")
+            ("↔" . "->")
+            ("←" . "<-")
+            ("→" . "->")
+            ("=" . "->")
+            ("==" . "->")
+            ("/\\" . "->")
+            ("⋅" . "->")
+            (":>" . ":=")
+            ("by" . "now")
+            ("forall" . "now")              ;; NB: this breaks current ∀ indentation.
+            ))
+    )
+
+  ;;  (with-eval-after-load "coq"
+  ;;    (define-key coq-mode-map (kbd "C-c C-k")
+  ;;                (lambda () (interactive) (proof-assert-until-point-interactive))))
+
+
 #+END_SRC

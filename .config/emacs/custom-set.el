@@ -5,7 +5,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
-   ["#2d2a2e" "#ff6188" "#a9dc76" "#ffd866" "dark red" "#ab9df2" "#a1efe4" "#fcfcfa"])
+   ["#2d2a2e" "#ff6188" "#a9dc76" "#ffd866" "dark red" "#ab9df2"
+    "#a1efe4" "#fcfcfa"])
  '(async-bytecomp-package-mode t)
  '(async-shell-command-buffer 'rename-buffer)
  '(auth-source-gpg-encrypt-to '("EA297DFC1EDBBA32252CDD12EF97796A7E0BB77D"))
@@ -20,11 +21,14 @@
  '(clang-format-executable "clang-format")
  '(clang-format-style "Google")
  '(company-backends
-   '(company-irony company-capf company-capf company-bbdb company-cmake company-capf company-clang company-files
-                   (company-dabbrev-code company-gtags company-etags company-keywords)
+   '(company-irony company-capf company-capf company-bbdb company-cmake
+                   company-capf company-clang company-files
+                   (company-dabbrev-code company-gtags company-etags
+                                         company-keywords)
                    company-oddmuse company-dabbrev))
  '(company-frontends
-   '(company-pseudo-tooltip-unless-just-one-frontend company-echo-metadata-frontend company-preview-frontend))
+   '(company-pseudo-tooltip-unless-just-one-frontend
+     company-echo-metadata-frontend company-preview-frontend))
  '(company-meghanada-insert-args t)
  '(company-meghanada-prefix-length 2)
  '(company-show-quick-access t nil nil "Customized with use-package company")
@@ -34,8 +38,16 @@
  '(completion-preview-minimum-symbol-length nil)
  '(copilot-idle-delay 0.1)
  '(copilot-indent-offset-warning-disable t)
+ '(coq-indent-align-with-first-arg t)
+ '(coq-indent-box-style nil)
+ '(coq-max-background-compilation-jobs 20)
+ '(coq-show-proof-stepwise nil)
+ '(coq-unicode-tokens-enable nil)
  '(custom-safe-themes
-   '("835868dcd17131ba8b9619d14c67c127aa18b90a82438c8613586331129dda63" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" "a325ba05dc3b5c2fa89af0ff354bbbe90251fb1a6e6d5682977cebe61ce72ab7" default))
+   '("835868dcd17131ba8b9619d14c67c127aa18b90a82438c8613586331129dda63"
+     "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9"
+     "a325ba05dc3b5c2fa89af0ff354bbbe90251fb1a6e6d5682977cebe61ce72ab7"
+     default))
  '(dap-auto-configure-features
    '(sessions locals breakpoints expressions repl controls tooltip))
  '(dap-debug-compilation-keep t)
@@ -57,6 +69,8 @@
  '(dired-keep-marker-hardlink t)
  '(dired-keep-marker-symlink t)
  '(dired-listing-switches "-ahl")
+ '(dired-mouse-drag-files t)
+ '(dired-recursive-copies 'always)
  '(dired-use-ls-dired 'unspecified)
  '(display-line-numbers 'relative)
  '(display-line-numbers-type 'relative)
@@ -74,15 +88,42 @@
  '(fa-hint-position-below t)
  '(face-font-family-alternatives
    '(("Monospace" "Comic Mono" "courier" "fixed")
-     ("Monospace Serif" "Courier 10 Pitch" "Consolas" "Courier Std" "FreeMono" "Nimbus Mono L" "courier" "fixed")
+     ("Monospace Serif" "Courier 10 Pitch" "Consolas" "Courier Std"
+      "FreeMono" "Nimbus Mono L" "courier" "fixed")
      ("courier" "CMU Typewriter Text" "fixed")
      ("Sans Serif" "helv" "helvetica" "arial" "fixed")
-     ("helv" "helvetica" "arial" "fixed")
-     ("Fira")))
+     ("helv" "helvetica" "arial" "fixed") ("Fira")))
  '(fira-code-mode-disabled-ligatures '("[]" "::") nil nil "Customized with use-package fira-code-mode")
  '(fira-code-mode-enable-hex-literal nil)
  '(flycheck-checkers
-   '(ada-gnat asciidoctor asciidoc awk-gawk bazel-buildifier c/c++-gcc c/c++-cppcheck cfengine chef-foodcritic coffee coffee-coffeelint coq css-csslint css-stylelint cuda-nvcc cwl d-dmd dockerfile-hadolint elixir-credo emacs-lisp emacs-lisp-checkdoc ember-template erlang-rebar3 erlang eruby-erubis eruby-ruumba fortran-gfortran go-gofmt go-golint go-vet go-build go-test go-errcheck go-unconvert go-staticcheck groovy haml handlebars haskell-stack-ghc haskell-ghc haskell-hlint html-tidy javascript-eslint javascript-jshint javascript-standard json-jsonlint json-python-json json-jq jsonnet less less-stylelint llvm-llc lua-luacheck lua markdown-markdownlint-cli markdown-mdl nix nix-linter opam perl perl-perlcritic php php-phpmd php-phpcs processing proselint protobuf-protoc protobuf-prototool pug puppet-parser puppet-lint python-flake8 python-pylint python-pycompile python-mypy r-lintr racket rpm-rpmlint rst-sphinx rst ruby-rubocop ruby-standard ruby-reek ruby-rubylint ruby ruby-jruby rust-cargo rust rust-clippy scala scala-scalastyle scheme-chicken scss-lint scss-stylelint sass/scss-sass-lint sass scss sh-bash sh-posix-dash sh-posix-bash sh-zsh sh-shellcheck slim slim-lint sql-sqlint systemd-analyze tcl-nagelfar terraform terraform-tflint tex-chktex tex-lacheck texinfo textlint typescript-tslint verilog-verilator vhdl-ghdl xml-xmlstarlet xml-xmllint yaml-jsyaml yaml-ruby yaml-yamllint))
+   '(ada-gnat asciidoctor asciidoc awk-gawk bazel-buildifier c/c++-gcc
+              c/c++-cppcheck cfengine chef-foodcritic coffee
+              coffee-coffeelint coq css-csslint css-stylelint
+              cuda-nvcc cwl d-dmd dockerfile-hadolint elixir-credo
+              emacs-lisp emacs-lisp-checkdoc ember-template
+              erlang-rebar3 erlang eruby-erubis eruby-ruumba
+              fortran-gfortran go-gofmt go-golint go-vet go-build
+              go-test go-errcheck go-unconvert go-staticcheck groovy
+              haml handlebars haskell-stack-ghc haskell-ghc
+              haskell-hlint html-tidy javascript-eslint
+              javascript-jshint javascript-standard json-jsonlint
+              json-python-json json-jq jsonnet less less-stylelint
+              llvm-llc lua-luacheck lua markdown-markdownlint-cli
+              markdown-mdl nix nix-linter opam perl perl-perlcritic
+              php php-phpmd php-phpcs processing proselint
+              protobuf-protoc protobuf-prototool pug puppet-parser
+              puppet-lint python-flake8 python-pylint python-pycompile
+              python-mypy r-lintr racket rpm-rpmlint rst-sphinx rst
+              ruby-rubocop ruby-standard ruby-reek ruby-rubylint ruby
+              ruby-jruby rust-cargo rust rust-clippy scala
+              scala-scalastyle scheme-chicken scss-lint scss-stylelint
+              sass/scss-sass-lint sass scss sh-bash sh-posix-dash
+              sh-posix-bash sh-zsh sh-shellcheck slim slim-lint
+              sql-sqlint systemd-analyze tcl-nagelfar terraform
+              terraform-tflint tex-chktex tex-lacheck texinfo textlint
+              typescript-tslint verilog-verilator vhdl-ghdl
+              xml-xmlstarlet xml-xmllint yaml-jsyaml yaml-ruby
+              yaml-yamllint))
  '(flycheck-clang-args '("-std=c++2a"))
  '(flycheck-clang-blocks t)
  '(flycheck-clang-include-path '("/usr/include/c++/10" "/usr/include/clang/10/include/"))
@@ -169,8 +210,9 @@
  '(org-export-backends '(ascii html icalendar latex md odt org))
  '(org-fontify-whole-heading-line t)
  '(org-format-latex-options
-   '(:foreground default :background default :scale 2.0 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
-                 ("begin" "$1" "$" "$$" "\\(" "\\[")))
+   '(:foreground default :background default :scale 2.0 :html-foreground
+                 "Black" :html-background "Transparent" :html-scale
+                 1.0 :matchers ("begin" "$1" "$" "$$" "\\(" "\\[")))
  '(org-hide-leading-stars t)
  '(org-highlight-latex-and-related '(latex script entities))
  '(org-journal-dir "~/MyFiles/Nikhil/journal")
@@ -183,7 +225,27 @@
  '(org-src-fontify-natively t)
  '(org-todo-keywords '((sequence "TODO" "DONE")))
  '(package-selected-packages
-   '(proof-general ## ac-ispell ace-jump-buffer ace-jump-helm-line ace-jump-mode ace-jump-zap ace-window aggressive-indent all-the-icons ansi auctex-lua auto-complete auto-complete-config auto-sudoedit autocrypt bash-completion beacon calmer-forest-theme cargo ccls centered-cursor-mode clang-format clang-format+ cmake-ide cmake-mode color-theme color-theme-sanityinc-solarized company company-auctex company-c-headers company-capf company-emoji company-ghci company-irony company-lua competitive-programming-snippets copilot crux cryptol-mode csv-mode d-mode dap-java dap-mode darcula-theme darkroom dired-rainbow direx docker docker-compose-mode dockerfile-mode doom-themes dot-mode dracula-theme drag-stuff dummyparens duplicate-thing eat electric-operator ellama elpy engine-mode erc-crypt eshell-git-prompt exec-path-from-shell expand-region find-temp-file fira-code-mode fireplace fish-completion fish-mode fixmee floobits flycheck flycheck-aspell flycheck-clang-tidy flycheck-gradle flycheck-haskell flycheck-irony flycheck-rust flyspell-correct forest-blue-theme function-args ggtags ghci-completion git-gutter git-gutter+ git-link github-modern-theme glsl-mode go go-mode golden-ratio golden-ratio-mode gotham-theme gptel gradle-mode graphviz-dot-mode groovy-mode gruvbox-theme haskell-emacs haskell-emacs-base haskell-mode haskell-snippets haskell-tab-indent helm helm-c-yasnippet helm-config helm-file-preview helm-fish-completion helm-flyspell helm-gtags helm-ispell helm-lsp helm-make helm-tramp highlight htmlize hydra idle-highlight-mode iedit image+ imenus info-beamer inline-crypt ivy js-format js2-mode jump-char latex-pretty-symbols leetcode license-snippets ll-debug loccur lsp-ccls lsp-haskell lsp-intellij lsp-java lsp-mode lsp-origami lsp-ui lua-mode magit make-it-so makefile-executor makey mandm-theme markdown-mode+ markdown-preview-mode markdownfmt meghanada minimal-theme misc modern-cpp-font-lock monokai-pro-theme move-text mu4e-alert mu4e-column-faces mu4e-conversation mu4e-jump-to-list mu4e-maildirs-extension mu4e-marker-icons mu4e-overview mu4e-query-fragments mu4e-views multi-term multiple-cursors nasm-mode nyan-mode olivetti org-bullets org-edit-latex org-fragtog org-journal org-journal-list org-mode org-outline-numbering org-roam org-super-agenda orgalist origami ox-reveal pg php-mode powerline projectile protobuf-mode py-snippets pylint rainbow-delimiters rainbow-identifiers ranger reverse-theme rust-mode sass-mode selectrum sexy-monochrome-theme simple-httpd skewer-mode smartparens solarized-theme sr-speedbar srefactor ssh sublime-themes sudo-edit toml toml-mode tramp tramp-auto-auth tramp-hdfs tramp-nspawn tramp-term tramp-theme treemacs-magit treesit-auto try typescript-mode undo-tree unicode-fonts use-package virtualenvwrapper visual-regexp visual-regexp-steroids vterm web-mode which-key windswap xwidgete yaml yaml-mode yasnippet yasnippet-snippets zenburn-theme zeno zeno-theme))
+   '(ace-jump-helm-line ace-jump-zap all-the-icons auto-package-update
+                        beacon bind-key cargo ccls clang-format
+                        company-irony copilot doom-themes drag-stuff
+                        duplicate-thing ellama exec-path-from-shell
+                        expand-region find-temp-file fixmee
+                        flycheck-haskell flycheck-rust go-mode
+                        golden-ratio gruvbox-theme irony ivy jump-char
+                        loccur lsp-haskell lsp-java lsp-ui magit
+                        move-text multiple-cursors nyan-mode
+                        org-journal org-roam proof-general pylint
+                        rocq-mode rust-mode smartparens sudo-edit
+                        toml-mode try undo-tree virtualenvwrapper
+                        visual-regexp-steroids web-mode which-key
+                        yaml-mode yasnippet-snippets))
+ '(package-vc-selected-packages
+   '((rocq-mode :url "https://codeberg.org/jpoiret/rocq-mode.el.git")
+     (rocq-mode.el :vc-backend Git :url
+                   "https://codeberg.org/jpoiret/rocq-mode.el.git")))
+ '(proof-indent-hang t)
+ '(proof-splash-time 0)
+ '(proof-toolbar-enable nil)
  '(rust-format-on-save t)
  '(rustic-analyzer-command '("/usr/lib/rustup/bin/rust-analyzer"))
  '(rustic-lsp-format t)
@@ -194,11 +256,8 @@
  '(send-mail-function 'mailclient-send-it)
  '(show-paren-mode t)
  '(tooltip-frame-parameters
-   '((name . "tooltip")
-     (internal-border-width . 2)
-     (border-width . 1)
-     (no-special-glyphs . t)
-     (alpha . 10)))
+   '((name . "tooltip") (internal-border-width . 2) (border-width . 1)
+     (no-special-glyphs . t) (alpha . 10)))
  '(tooltip-mode nil)
  '(tramp-terminal-type "tramp")
  '(tramp-verbose 6)
@@ -220,8 +279,10 @@
  '(web-mode-enable-optional-tags nil)
  '(web-mode-enable-sql-detection t)
  '(web-mode-enable-whitespace-fontification nil)
+ '(whitespace-action '(auto-cleanup))
  '(yas-snippet-dirs
-   '("/home/nikhilc/.config/emacs/snippets" yasnippet-snippets-dir "/home/nikhilc/.config/emacs/elpa/yasnippet-snippets-20240911.801/snippets"))
+   '("/home/nikhilc/.config/emacs/snippets" yasnippet-snippets-dir
+     "/home/nikhilc/.config/emacs/elpa/yasnippet-snippets-20240911.801/snippets"))
  '(zeno-theme-enable-italics t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -236,4 +297,7 @@
  '(lsp-flycheck-warning-unnecessary-face ((t (:foreground "dim gray" :underline (:color "yellow" :style wave :position nil)))) t)
  '(lsp-ui-doc-background ((t (:background nil))))
  '(lsp-ui-doc-header ((t (:inherit (font-lock-string-face italic)))))
- '(region ((t (:extend t :background "#cc02bb" :foreground "#d3e603")))))
+ '(region ((t (:extend t :background "#cc02bb" :foreground "#d3e603"))))
+ '(rocq-goal-face ((t (:underline nil))))
+ '(rocq-mode-last-goal-request ((t (:background "green"))))
+ '(rocq-mode-processing-face ((t (:background "medium blue")))))

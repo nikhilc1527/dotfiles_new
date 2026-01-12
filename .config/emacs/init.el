@@ -10,3 +10,4 @@
 (load custom-file 'noerror)
 
 (org-babel-load-file (concat user-emacs-directory "myinit.org"))
+(put 'dired-find-alternate-file 'disabled nil)

@@ -874,3 +874,11 @@ output=$(go run *.go -mode=test -name=real-nginx-pod -image=hello-world-go -type
 echo $output 
 echo "$output"
 reflector > /etc/pacman.d/mirrorlist
+./generate-rules.sh > /etc/udev/rules.d/99-opentabletdriver.rules
+ls /sys/kernel/debug/hid/0005\:256C\:8251.000F/events 
+cat /sys/kernel/debug/hid/0005\:256C\:8251.000F/events 
+cat /sys/kernel/debug/hid/0003\:256C\:2012.0013/events 
+cat /sys/kernel/debug/hid/0003\:256C\:2012.0013/rdesc 
+cat /sys/kernel/debug/usb/usbmon/3u 
+cat /sys/kernel/debug/usb/devices 
+btmon 
