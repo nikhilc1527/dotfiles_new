@@ -3,52 +3,17 @@
 
 (setq mc/cmds-to-run-for-all
       '(
-        backward-sexp
         beginning-of-visual-line
-        c-electric-colon
-        c-electric-delete-forward
-        c-electric-paren
-        c-electric-semi&comma
-        c-electric-star
-        c-indent-line-or-region
-        completion-kill-region
-        coq-terminator-insert
-        copilot-accept-completion
-        electric-newline-and-maybe-indent
-        electric-pair-delete-pair
+        consult-line
         end-of-visual-line
-        forward-sexp
-        haskell-indentation-common-electric-command
-        helm-M-x
         indent-for-tab-command
-        markdown-beginning-of-line
-        markdown-end-of-line
-        markdown-outdent-or-delete
+        insert-char
         my-backward-delete-word
-        my-delete-line
-        my-delete-word
-        org-delete-char
-        org-self-insert-command
-        revert-buffer
-        tex-handle-newline
-        wdired--self-insert
-        yaml-electric-backspace
         ))
 
 (setq mc/cmds-to-run-once
       '(
-        dap-tooltip-mouse-motion
-        dired-clean-directory
-        dired-next-line
-        dired-previous-line
-        dired-toggle-read-only
-        end-of-buffer
-        helm-confirm-and-exit-minibuffer
-        loccur-current
-        lsp-signature-activate
-        lsp-ui-doc--handle-mouse-movement
+        mc/toggle-cursor-on-click
         mouse-drag-region-rectangle
-        org-ctrl-c-ctrl-c
         text-scale-adjust
-        wdired-finish-edit
         ))

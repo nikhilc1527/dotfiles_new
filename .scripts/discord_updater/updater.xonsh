@@ -1,0 +1,34 @@
+#!/usr/bin/env xonsh
+
+whoami
+
+$XONSH_SHOW_TRACEBACK = True
+
+import json
+import os
+
+p = !(@thread sudo -u haddr discord)
+
+new_version = -1
+
+for line in p:
+    if len(line.split()) == 3:
+        if "update-manually" in line:
+            print("Manual update required")
+            p.proc.terminate()
+            line_split = line.split()
+            new_version = line_split[-1]
+            break
+
+if new_version != -1:
+    print(f"New version available: {new_version}")
+
+path = "/opt/discord/resources/build_info.json"
+data = json.loads(open(path, "r").read())
+data['version'] = new_version
+print(data)
+with open(path, "w") as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
+    f.write("\n")
+
+sudo -u haddr discord

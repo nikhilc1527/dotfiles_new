@@ -3,9 +3,6 @@
 .config/emacs/*
 !.config/emacs/custom-set.el
 !.config/emacs/init.el
-!.config/emacs/java_setup.org
-!.config/emacs/myinit.org
-!.config/emacs/programminginit.org
 !.config/emacs/.mc-lists.el
 
 .config/zsh/.zcompdump
