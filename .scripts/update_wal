@@ -1,24 +1,18 @@
-#!/bin/sh
+#!/usr/bin/env xonsh
 
-set -xe
+if len($ARGS) > 1:
+    wallpaper = $ARGS[1]
+else:
+    wallpaper = $(readlink -f ~/.local/share/backgrounds/background.png)
 
-wallpaper=$(cat ~/.cache/wal/wal)
-wallpaper=$(readlink -f $wallpaper)
+print(wallpaper)
 
-if [ "$#" -eq 1 ]; then
-	wallpaper=$1
-fi
-
-echo $wallpaper
-
-wal -i $wallpaper
+wal -i @(wallpaper)
 cp ~/.cache/wal/colors-waybar.css ~/.config/waybar/
 cp ~/.cache/wal/fuzzel.ini ~/.config/fuzzel/
 
-killall waybar || true
+killall -s SIGUSR2 waybar
 
-# sleep 1
 pywalfox update
 
-waybar &
-swaybg -i $wallpaper &
+hyprctl hyprpaper wallpaper @("," + wallpaper + ",")

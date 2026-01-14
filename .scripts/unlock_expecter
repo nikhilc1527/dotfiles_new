@@ -1,5 +1,0 @@
-#!/bin/expect -f
-
-spawn xscreensaver-command -watch
-expect "UNBLANK"
-exit

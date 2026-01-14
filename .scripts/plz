@@ -1,4 +1,0 @@
-#!/bin/sh
-
-gpg -q -d $HOME/.local/share/password.gpg | sudo -S -p "" "$@"
-sudo -k

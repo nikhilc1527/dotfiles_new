@@ -1,8 +1,0 @@
-#!/bin/sh
-
-killall x0vncserver
-x0vncserver -PasswordFile ~/.vnc/passwd -SecurityTypes VncAuth -AlwaysShared -display :0 &
-
-ssh -N -R 1999:localhost:25565 site &
-ssh -N -R 2000:localhost:5900 site &
-ssh -N -R 2001:localhost:22 site &

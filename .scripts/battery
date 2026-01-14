@@ -1,4 +1,0 @@
-power=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0)
-percentage=$(echo "$power" | grep percentage | awk -F: '{print $2;}' | xargs -L1)
-state=$(echo "$power" | grep state | awk -F: '{print $2;}' | xargs -L1)
-echo -e "$percentage\n$state"

@@ -1,6 +1,0 @@
-#!/usr/bin/env sh
-
-cd $HOME
-config status --porcelain | grep "^ " | cut -f 3- -d ' ' | xargs config add
-config commit -m "$(date)"
-config push
