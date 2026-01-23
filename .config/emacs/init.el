@@ -17,6 +17,7 @@
 (global-display-line-numbers-mode 1)
 (setq display-line-numbers-type 'relative)
 (put 'narrow-to-region 'disabled nil)
+(setq completion-ignored-extensions nil)
 
 ;; Keybindings
 (global-set-key (kbd "<f5>") #'revert-buffer)
@@ -24,7 +25,17 @@
 (global-set-key (kbd "C-x RET RET")
                 (lambda ()
                   (interactive)
-                  (start-process "term" nil "alacritty" "--working-directory" ".")))
+                  (start-process "term" nil "setsid" "alacritty" "--working-directory" ".")))
+
+;; Auto-create parent directories for new files
+(defun my-create-missing-directories ()
+  "Create parent directories if they don't exist."
+  (let ((dir (file-name-directory buffer-file-name)))
+    (when (and dir (not (file-exists-p dir)))
+      (make-directory dir t)))
+  nil)
+
+(add-hook 'find-file-not-found-functions #'my-create-missing-directories)
 
 ;; Package setup
 (require 'package)
@@ -105,6 +116,9 @@
   (setq consult-async-min-input 0
         consult-project-function nil))
 
+(use-package magit
+  :bind (("C-x g" . magit-status)))
+
 ;; Tree-sitter auto setup
 (use-package treesit-auto
   :custom
@@ -177,12 +191,10 @@
 
 ;; C/C++ LSP (clangd)
 (use-package c-mode
-  :ensure nil
   :hook ((c-mode . lsp-deferred)
          (c-ts-mode . lsp-deferred)))
 
 (use-package c++-mode
-  :ensure nil
   :hook ((c++-mode . lsp-deferred)
          (c++-ts-mode . lsp-deferred)))
 
@@ -190,6 +202,8 @@
 (use-package go-mode
   :hook ((go-mode . lsp-deferred)
          (go-ts-mode . lsp-deferred)))
+
+(use-package xonsh-mode)
 
 ;; Copilot
 (use-package copilot
@@ -289,6 +303,8 @@
   (nyan-mode 1))
 
 (use-package expreg
+  :config
+  (setq expreg-restore-point-on-quit t)
   :bind (("C-=" . expreg-expand))
   :bind (("C-+" . expreg-contract)))
 
@@ -305,6 +321,9 @@
 (setq electric-pair-preserve-balance t)
 (setq electric-layout-mode nil)
 
+;; Disable electric pairing in minibuffer
+(add-hook 'minibuffer-setup-hook (lambda () (electric-pair-local-mode -1)))
+
 ;; Dired behavior
 (setq dired-recursive-copies 'always
       dired-auto-revert-buffer t
@@ -314,6 +333,24 @@
 (use-package all-the-icons-dired
   :after dired
   :hook (dired-mode . all-the-icons-dired-mode))
+
+;; loccur (local occur)
+(use-package loccur
+  :bind (("C-o" . loccur-current)
+         ("C-S-o" . loccur)))
+
+;; phi-search (multi-cursor-friendly search)
+(use-package phi-search
+  :custom
+  (push '((kbd "RET") . 'phi-search-complete-at-beginning)
+        phi-search-additional-keybinds)
+  (push '((kbd "C-<return>") . 'phi-search-complete)
+        phi-search-additional-keybinds)
+  :bind (("C-c /" . phi-search)
+         ("C-c ?" . phi-search-backward)))
+
+(use-package phi-search-mc
+  :after (phi-search multiple-cursors))
 
 ;; Delete word/line without adding to kill-ring
 (defun my-delete-word (arg)

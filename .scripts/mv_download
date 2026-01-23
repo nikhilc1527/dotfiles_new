@@ -1,6 +1,24 @@
-#!/bin/sh
+#!/usr/bin/env xonsh
 
-unquoted=$(/usr/bin/ls -t "$HOME/Downloads" | head -n1)
-quoted=$(echo "$HOME/Downloads/$unquoted")
+# cp if true, mv if false, default true
+c = True
+target = "."
 
-([ "$#" -gt 0 ] && /usr/bin/mv "$quoted" "$1") || /usr/bin/mv "$quoted" .
+if len($ARGS) == 1:
+    pass
+elif len($ARGS) == 2 and $ARGS[1] == '-mv':
+    c = False
+elif len($ARGS) == 2:
+    target = $ARGS[1]
+elif len($ARGS) == 3 and $ARGS[1] == '-mv':
+    c = False
+    target = $ARGS[2]
+else:
+    print("usage:")
+    print("    cp_download [-m] [target_dir]")
+
+l = $(ls -t "$HOME/Downloads")
+l = l.splitlines()[0]
+
+@("cp" if c else "mv") @(pf"~/Downloads/{l}") @(pf"{target}")
+echo @("cp" if c else "mv") @(pf"~/Downloads/{l}") @(pf"{target}")

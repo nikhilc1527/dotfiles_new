@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        avy-goto-char-timer
         beginning-of-visual-line
         comment-dwim
         consult-line
@@ -13,11 +14,15 @@
         insert-char
         my-backward-delete-word
         my-delete-line
+        phi-search
+        search-forward
         ))
 
 (setq mc/cmds-to-run-once
       '(
         holes-mouse-set-make-active-hole
+        describe-key
+        handle-switch-frame
         mc/toggle-cursor-on-click
         mouse-drag-region-rectangle
         text-scale-adjust
