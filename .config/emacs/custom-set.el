@@ -12,7 +12,6 @@
      ("==" . "->") ("/\\" . "->") ("⋅" . "->") (":>" . ":=")
      ("by" . "now") ("forall" . "now")))
  '(default-transient-input-method "TeX")
- '(package-selected-packages nil)
  '(what-cursor-show-names t)
  '(before-save-hook '(whitespace-cleanup))
  '(compilation-ask-about-save nil)
