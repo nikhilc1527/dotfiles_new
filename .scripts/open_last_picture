@@ -1,0 +1,8 @@
+#!/usr/bin/env xonsh
+
+cd
+
+l = $(ls -t ~/Pictures)
+l = l.split('\n')[0]
+
+xdg-open @("{}/Pictures/{}".format($HOME, l))

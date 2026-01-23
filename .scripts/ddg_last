@@ -1,0 +1,12 @@
+#!/usr/bin/env xonsh
+
+if len($ARGS) != 2:
+   print("need at least one argument of directory to ddg last in")
+   exit(1)
+
+dir = $ARGS[1]
+
+l = $(ls -t @(dir))
+l = l.splitlines()[0]
+
+dragon-drop @(pf"{dir}/{l}")

@@ -3,16 +3,23 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        avy-goto-char-timer
         beginning-of-visual-line
+        comment-dwim
         consult-line
         end-of-visual-line
         indent-for-tab-command
         insert-char
         my-backward-delete-word
+        my-delete-line
+        phi-search
+        search-forward
         ))
 
 (setq mc/cmds-to-run-once
       '(
+        describe-key
+        handle-switch-frame
         mc/toggle-cursor-on-click
         mouse-drag-region-rectangle
         text-scale-adjust

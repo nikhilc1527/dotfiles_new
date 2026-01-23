@@ -1,6 +1,6 @@
 # [cursor]
 # blink_interval = 2
-#
+# 
 # [cursor.style]
 # blinking = "On"
 # shape = "Block"
@@ -50,3 +50,6 @@ opacity = 0.8
 [window.padding]
 x = 0
 y = 0
+
+# [general]
+# live_config_reload = true
