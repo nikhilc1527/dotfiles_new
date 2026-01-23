@@ -27,15 +27,15 @@
                   (interactive)
                   (start-process "term" nil "setsid" "alacritty" "--working-directory" ".")))
 
-;; Auto-create parent directories for new files
-(defun my-create-missing-directories ()
-  "Create parent directories if they don't exist."
-  (let ((dir (file-name-directory buffer-file-name)))
-    (when (and dir (not (file-exists-p dir)))
-      (make-directory dir t)))
-  nil)
+;; ;; Auto-create parent directories for new files
+;; (defun my-create-missing-directories ()
+;;   "Create parent directories if they don't exist."
+;;   (let ((dir (file-name-directory buffer-file-name)))
+;;     (when (and dir (not (file-exists-p dir)))
+;;       (make-directory dir t)))
+;;   nil)
 
-(add-hook 'find-file-not-found-functions #'my-create-missing-directories)
+;; (add-hook 'find-file-not-found-functions #'my-create-missing-directories)
 
 ;; Package setup
 (require 'package)
@@ -156,7 +156,14 @@
         lsp-completion-provider :company
         lsp-completion-enable-snippet t
         lsp-prefer-flymake nil
-        lsp-enable-on-type-formatting nil))
+        lsp-enable-on-type-formatting nil)
+  :hook
+  ;; using default clangd
+  ((c-mode . lsp-deferred)
+   (c-ts-mode . lsp-deferred)
+   ((c++-mode . lsp-deferred))
+   (c++-ts-mode . lsp-deferred))
+  )
 
 (use-package lsp-ui
   :after lsp-mode
@@ -188,15 +195,6 @@
 (use-package rust-mode
   :hook ((rust-mode . lsp-deferred)
          (rust-ts-mode . lsp-deferred)))
-
-;; C/C++ LSP (clangd)
-(use-package c-mode
-  :hook ((c-mode . lsp-deferred)
-         (c-ts-mode . lsp-deferred)))
-
-(use-package c++-mode
-  :hook ((c++-mode . lsp-deferred)
-         (c++-ts-mode . lsp-deferred)))
 
 ;; Go LSP (gopls)
 (use-package go-mode
