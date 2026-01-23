@@ -198,12 +198,27 @@
   (define-key copilot-completion-map (kbd "C-<tab>") #'copilot-accept-completion)
   (define-key copilot-completion-map (kbd "C-M-<tab>") #'copilot-accept-completion-by-word))
 
+;; TeX input method setup, only use backslash commands
+(use-package quail
+  :ensure nil
+  :config
+  (set-input-method "TeX")
+  (quail-activate "Tex")
+
+  ;; Remove _ and ^ prefix trees from the map directly
+  (let ((map (quail-map)))
+    (setcdr map (assq-delete-all ?_ (assq-delete-all ?^ (assq-delete-all ?$ (assq-delete-all ?- (assq-delete-all ?? (assq-delete-all ?! (cdr map)))))))))
+  (set-input-method nil)
+  )
+
 ;; Proof General (Coq)
 (use-package proof-general
   :hook (coq-mode . (lambda ()
                       (local-set-key (kbd "C-c C-k")
                                      #'proof-assert-until-point-interactive)
-                      (set-input-method "TeX")))
+                      ;; tex backslash input method
+                      (set-input-method "TeX")
+                      ))
   :config
   (setq proof-splash-enable nil)
   (setq proof-three-window-mode-policy 'hybrid)

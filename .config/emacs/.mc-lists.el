@@ -4,15 +4,20 @@
 (setq mc/cmds-to-run-for-all
       '(
         beginning-of-visual-line
+        comment-dwim
         consult-line
+        coq-terminator-insert
         end-of-visual-line
+        forward-sexp
         indent-for-tab-command
         insert-char
         my-backward-delete-word
+        my-delete-line
         ))
 
 (setq mc/cmds-to-run-once
       '(
+        holes-mouse-set-make-active-hole
         mc/toggle-cursor-on-click
         mouse-drag-region-rectangle
         text-scale-adjust
