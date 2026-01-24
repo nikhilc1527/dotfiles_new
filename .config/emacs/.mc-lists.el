@@ -7,7 +7,9 @@
         beginning-of-visual-line
         comment-dwim
         consult-line
+        coq-terminator-insert
         end-of-visual-line
+        forward-sexp
         indent-for-tab-command
         insert-char
         my-backward-delete-word
@@ -18,6 +20,7 @@
 
 (setq mc/cmds-to-run-once
       '(
+        holes-mouse-set-make-active-hole
         describe-key
         handle-switch-frame
         mc/toggle-cursor-on-click

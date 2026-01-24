@@ -27,15 +27,15 @@
                   (interactive)
                   (start-process "term" nil "setsid" "alacritty" "--working-directory" ".")))
 
-;; Auto-create parent directories for new files
-(defun my-create-missing-directories ()
-  "Create parent directories if they don't exist."
-  (let ((dir (file-name-directory buffer-file-name)))
-    (when (and dir (not (file-exists-p dir)))
-      (make-directory dir t)))
-  nil)
+;; ;; Auto-create parent directories for new files
+;; (defun my-create-missing-directories ()
+;;   "Create parent directories if they don't exist."
+;;   (let ((dir (file-name-directory buffer-file-name)))
+;;     (when (and dir (not (file-exists-p dir)))
+;;       (make-directory dir t)))
+;;   nil)
 
-(add-hook 'find-file-not-found-functions #'my-create-missing-directories)
+;; (add-hook 'find-file-not-found-functions #'my-create-missing-directories)
 
 ;; Package setup
 (require 'package)
@@ -156,7 +156,14 @@
         lsp-completion-provider :company
         lsp-completion-enable-snippet t
         lsp-prefer-flymake nil
-        lsp-enable-on-type-formatting nil))
+        lsp-enable-on-type-formatting nil)
+  :hook
+  ;; using default clangd
+  ((c-mode . lsp-deferred)
+   (c-ts-mode . lsp-deferred)
+   ((c++-mode . lsp-deferred))
+   (c++-ts-mode . lsp-deferred))
+  )
 
 (use-package lsp-ui
   :after lsp-mode
@@ -189,15 +196,6 @@
   :hook ((rust-mode . lsp-deferred)
          (rust-ts-mode . lsp-deferred)))
 
-;; C/C++ LSP (clangd)
-(use-package c-mode
-  :hook ((c-mode . lsp-deferred)
-         (c-ts-mode . lsp-deferred)))
-
-(use-package c++-mode
-  :hook ((c++-mode . lsp-deferred)
-         (c++-ts-mode . lsp-deferred)))
-
 ;; Go LSP (gopls)
 (use-package go-mode
   :hook ((go-mode . lsp-deferred)
@@ -212,12 +210,27 @@
   (define-key copilot-completion-map (kbd "C-<tab>") #'copilot-accept-completion)
   (define-key copilot-completion-map (kbd "C-M-<tab>") #'copilot-accept-completion-by-word))
 
+;; TeX input method setup, only use backslash commands
+(use-package quail
+  :ensure nil
+  :config
+  (set-input-method "TeX")
+  (quail-activate "Tex")
+
+  ;; Remove _ and ^ prefix trees from the map directly
+  (let ((map (quail-map)))
+    (setcdr map (assq-delete-all ?_ (assq-delete-all ?^ (assq-delete-all ?$ (assq-delete-all ?- (assq-delete-all ?? (assq-delete-all ?! (cdr map)))))))))
+  (set-input-method nil)
+  )
+
 ;; Proof General (Coq)
 (use-package proof-general
   :hook (coq-mode . (lambda ()
                       (local-set-key (kbd "C-c C-k")
                                      #'proof-assert-until-point-interactive)
-                      (set-input-method "TeX")))
+                      ;; tex backslash input method
+                      (set-input-method "TeX")
+                      ))
   :config
   (setq proof-splash-enable nil)
   (setq proof-three-window-mode-policy 'hybrid)
