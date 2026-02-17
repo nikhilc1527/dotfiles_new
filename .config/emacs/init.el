@@ -21,7 +21,7 @@
 
 ;; Keybindings
 (global-set-key (kbd "<f5>") #'revert-buffer)
-(global-set-key (kbd "C-x C-b") #'ibuffer)
+(global-set-key (kbd "C-x C-b") #'buffer-menu)
 (global-set-key (kbd "C-x RET RET")
                 (lambda ()
                   (interactive)
@@ -211,17 +211,9 @@
   (define-key copilot-completion-map (kbd "C-M-<tab>") #'copilot-accept-completion-by-word))
 
 ;; TeX input method setup, only use backslash commands
-(use-package quail
-  :ensure nil
-  :config
-  (set-input-method "TeX")
-  (quail-activate "Tex")
-
-  ;; Remove _ and ^ prefix trees from the map directly
-  (let ((map (quail-map)))
-    (setcdr map (assq-delete-all ?_ (assq-delete-all ?^ (assq-delete-all ?$ (assq-delete-all ?- (assq-delete-all ?? (assq-delete-all ?! (cdr map)))))))))
-  (set-input-method nil)
-  )
+;; (use-package quail
+;;   :ensure t
+;;   )
 
 ;; Proof General (Coq)
 (use-package proof-general
@@ -229,17 +221,13 @@
                       (local-set-key (kbd "C-c C-k")
                                      #'proof-assert-until-point-interactive)
                       ;; tex backslash input method
-                      (set-input-method "TeX")
+                      ;; (set-input-method "TeX")
                       ))
   :config
   (setq proof-splash-enable nil)
   (setq proof-three-window-mode-policy 'hybrid)
-  ;; Keep TeX input method but disable ^/_ shortcuts in Coq buffers
-  ;; (add-hook 'coq-mode-hook
-  ;;           (lambda ()
-  ;;             (with-eval-after-load 'quail
-  ;;               (quail-defrule "^" "^" "Tex")
-  ;;               (quail-defrule "_" "_" "Tex"))))
+
+  ;; for iris
   (setq coq-smie-user-tokens
         '(("," . ":=")
           ("∗" . "->")
@@ -260,6 +248,12 @@
           (":>" . ":=")
           ("by" . "now")
           ("forall" . "now"))))
+
+(use-package company-coq
+  :after (company proof-general)
+  :config
+  ;; Load company-coq when opening Coq files
+  (add-hook 'coq-mode-hook #'company-coq-mode))
 
 
 ;; Small quality-of-life packages
@@ -332,10 +326,21 @@
   :after dired
   :hook (dired-mode . all-the-icons-dired-mode))
 
+(use-package ultra-scroll
+  :config
+  (ultra-scroll-mode 1)
+  )
+
 ;; loccur (local occur)
 (use-package loccur
   :bind (("C-o" . loccur-current)
          ("C-S-o" . loccur)))
+
+;; flash
+(use-package flash
+  :commands (flash-jump flash-jump-continue
+             flash-treesitter)
+  :bind ("C-;" . flash-jump))
 
 ;; phi-search (multi-cursor-friendly search)
 (use-package phi-search

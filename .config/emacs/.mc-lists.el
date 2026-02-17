@@ -3,27 +3,37 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        Buffer-menu-delete
         avy-goto-char-timer
+        backward-sexp
         beginning-of-visual-line
         comment-dwim
+        company-coq-maybe-exit-snippet
         consult-line
         coq-terminator-insert
+        cycle-spacing
+        delete-indentation
+        electric-newline-and-maybe-indent
         end-of-visual-line
+        expreg-expand
+        flash-jump
         forward-sexp
         indent-for-tab-command
         insert-char
         my-backward-delete-word
         my-delete-line
+        my-delete-word
         phi-search
         search-forward
         ))
 
 (setq mc/cmds-to-run-once
       '(
-        holes-mouse-set-make-active-hole
         describe-key
         handle-switch-frame
+        holes-mouse-set-make-active-hole
         mc/toggle-cursor-on-click
         mouse-drag-region-rectangle
         text-scale-adjust
+        undefined
         ))
