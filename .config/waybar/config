@@ -64,24 +64,23 @@
     },
     "clock": {
         "interval": 1,
-        "locale": "C", 
+        "locale": "C",
         "format": " {:%I:%M %p}",
         "format-alt": " {:%a,%b %d}" // Icon: calendar-alt
     },
     "cpu": {
         "format": "&#8239;{usage}%",
         "tooltip": false,
-        "on-click": "$TERMINAL -e 'btop'",
         "interval": 1,
     },
     "memory": {
         "interval": 1,
         "format": " {used:0.2f}GB",
-
         "max-length": 10,
         "tooltip": false,
         "warning": 70,
-        "critical": 90
+        "critical": 90,
+        "on-click": "$TERMINAL -e 'btop'",
     },
     "temperature": {
         "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",

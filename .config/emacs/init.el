@@ -22,10 +22,12 @@
 ;; Keybindings
 (global-set-key (kbd "<f5>") #'revert-buffer)
 (global-set-key (kbd "C-x C-b") #'buffer-menu)
-(global-set-key (kbd "C-x RET RET")
-                (lambda ()
-                  (interactive)
-                  (start-process "term" nil "setsid" "alacritty" "--working-directory" ".")))
+(use-package terminal-here
+  :bind (("C-x RET RET" . terminal-here-launch)))
+;; (global-set-key (kbd "C-x RET RET")
+;;                 (lambda ()
+;;                   (interactive)
+;;                   (start-process "term" nil "alacritty" "--working-directory" ".")))
 
 ;; ;; Auto-create parent directories for new files
 ;; (defun my-create-missing-directories ()
@@ -205,6 +207,7 @@
 
 ;; Copilot
 (use-package copilot
+  :defer t
   :hook ((prog-mode text-mode) . copilot-mode)
   :config
   (define-key copilot-completion-map (kbd "C-<tab>") #'copilot-accept-completion)

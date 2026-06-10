@@ -25,6 +25,8 @@
         my-delete-word
         phi-search
         search-forward
+        wdired--self-insert
+        wdired-finish-edit
         ))
 
 (setq mc/cmds-to-run-once
@@ -34,6 +36,7 @@
         holes-mouse-set-make-active-hole
         mc/toggle-cursor-on-click
         mouse-drag-region-rectangle
+        pg-protected-undo
         text-scale-adjust
         undefined
         ))

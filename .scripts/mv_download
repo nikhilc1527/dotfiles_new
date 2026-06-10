@@ -6,16 +6,17 @@ target = "."
 
 if len($ARGS) == 1:
     pass
-elif len($ARGS) == 2 and $ARGS[1] == '-mv':
+elif len($ARGS) == 2 and $ARGS[1] == '-m':
     c = False
 elif len($ARGS) == 2:
     target = $ARGS[1]
-elif len($ARGS) == 3 and $ARGS[1] == '-mv':
+elif len($ARGS) == 3 and $ARGS[1] == '-m':
     c = False
     target = $ARGS[2]
 else:
     print("usage:")
     print("    cp_download [-m] [target_dir]")
+    exit
 
 l = $(ls -t "$HOME/Downloads")
 l = l.splitlines()[0]

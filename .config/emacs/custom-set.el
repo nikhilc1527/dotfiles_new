@@ -18,10 +18,13 @@
      ("==∗" . "->") ("=∗" . "->") ("|==>" . ":=") ("⊢" . "->")
      ("⊣⊢" . "->") ("↔" . "->") ("←" . "<-") ("→" . "->") ("=" . "->")
      ("==" . "->") ("/\\" . "->") ("⋅" . "->") (":>" . ":=")
-     ("by" . "now") ("forall" . "now")))
+     ("by" . "now") ("forall" . "now")) t)
  '(default-transient-input-method "TeX")
  '(dired-kill-when-opening-new-dired-buffer t)
  '(dired-listing-switches "-alh")
+ '(display-buffer-alist
+   '(("\\\\*Async Shell Command\\\\*"
+      (display-buffer-reuse-window display-buffer-at-bottom))))
  '(flash-autojump nil)
  '(flash-isearch-mode t)
  '(flash-rainbow t)
@@ -40,11 +43,14 @@
                    nerd-icons-completion nyan-mode orderless
                    org-journal org-roam phi-search-mc projectile
                    proof-general rocq-mode rust-mode sudo-edit
-                   toml-mode treesit-auto try typescript-mode
-                   ultra-scroll undo-tree vertico virtualenvwrapper
-                   visual-regexp-steroids web-mode which-key
-                   xonsh-mode yasnippet-snippets))
+                   terminal-here toml-mode treesit-auto try
+                   typescript-mode ultra-scroll undo-tree vertico
+                   virtualenvwrapper visual-regexp-steroids web-mode
+                   which-key xonsh-mode yasnippet-snippets))
  '(phi-search-case-sensitive t)
+ '(terminal-here-linux-terminal-command nil)
+ '(terminal-here-terminal-command 'alacritty)
+ '(terminal-here-verbose nil)
  '(what-cursor-show-names t)
  '(whitespace-style '(face trailing tabs)))
 (custom-set-faces

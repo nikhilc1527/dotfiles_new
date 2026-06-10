@@ -16,7 +16,7 @@ export CC="/usr/bin/gcc"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
+# eval "$(pyenv init --path)"
 
 export TERMINAL="alacritty"
 export BROWSER="firefox"
@@ -57,9 +57,9 @@ export ANDROID_HOME=$HOME/MyFiles/AndroidSDK2
 # . ~/.config/tty.sh
 
 # ibus stuff
-GTK_IM_MODULE=ibus 
-QT_IM_MODULE=ibus
-XMODIFIERS="@im=ibus"
+# GTK_IM_MODULE=ibus 
+# QT_IM_MODULE=ibus
+# XMODIFIERS="@im=ibus"
 
 export DEFAULT_SESSION="dwm"
 
