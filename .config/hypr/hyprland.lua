@@ -208,7 +208,20 @@ hl.bind(mainMod .. " + L", hl.dsp.layout("orientationcycle left top"))
 
 -- general layout bindings
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
-hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen_state({ internal = -1, client = 2 }))
+
+hl.bind(mainMod .. " + SHIFT + F",
+        function()
+            local state = hl.get_window("active").fullscreen_client
+            if state == 2 then
+                hl.dispatch(hl.dsp.window.fullscreen_state({ internal = -1, client = 0 }))
+            elseif state == 1 then
+                hl.dispatch(hl.dsp.window.fullscreen_state({ internal = -1, client = 0 }))
+            elseif state == 0 then
+                hl.dispatch(hl.dsp.window.fullscreen_state({ internal = -1, client = 2 }))
+            end
+        end
+)
+
 hl.bind(mainMod .. " + SHIFT + Space", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("hyprctl dispatch pin"))
 
@@ -227,7 +240,7 @@ for i = 1, 10 do
     hl.bind(mainMod .. " + SHIFT + " .. n, smw.move_to_workspace(tostring(i)))
 end
 
-hl.bind(mainMod .. " + ALT + code:60", hl.dsp.exec_cmd("hyprctl dispatch split-changemonitor next"))
+hl.bind(mainMod .. " + ALT + code:60", hl.dsp.window.move({monitor = "+1"}))
 hl.bind(mainMod .. " + SHIFT + code:60", hl.dsp.focus({ monitor = "+1" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
