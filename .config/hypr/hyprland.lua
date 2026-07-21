@@ -50,6 +50,7 @@ hl.on("hyprland.start", function()
                             hl.exec_cmd("nm-applet")
                             hl.exec_cmd("syncthing --no-browser")
                             hl.exec_cmd("batsignal -p -m 1 -b")
+                            hl.exec_cmd("easyeffects -w")
                             hl.exec_cmd(os.getenv("HOME") .. "/.scripts/firefox_popup_watcher.sh")
 end)
 
