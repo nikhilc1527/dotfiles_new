@@ -30,23 +30,7 @@
  '(flash-rainbow t)
  '(global-whitespace-mode t)
  '(lsp-auto-guess-root t)
- '(package-selected-packages
-   '(ace-jump-mode all-the-icons-dired beacon cargo ccls company-coq
-                   company-irony consult copilot copilot-chat csv-mode
-                   doom-themes duplicate-thing eat ein ellama
-                   exec-path-from-shell expand-region expreg
-                   find-temp-file fira-code-mode fixmee flash
-                   flycheck-haskell flycheck-rust go go-mode
-                   golden-ratio gptel gruvbox-theme helm-tramp
-                   jump-char loccur lsp-haskell lsp-java lsp-pyright
-                   lsp-ui magit marginalia math-symbols move-text
-                   nerd-icons-completion nyan-mode orderless
-                   org-journal org-roam phi-search-mc projectile
-                   proof-general rocq-mode rust-mode sudo-edit
-                   terminal-here toml-mode treesit-auto try
-                   typescript-mode ultra-scroll undo-tree vertico
-                   virtualenvwrapper visual-regexp-steroids web-mode
-                   which-key xonsh-mode yasnippet-snippets))
+ '(package-selected-packages nil)
  '(phi-search-case-sensitive t)
  '(terminal-here-linux-terminal-command nil)
  '(terminal-here-terminal-command 'alacritty)
