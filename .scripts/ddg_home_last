@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -xe
+
+# Drag the most recently modified regular file under $HOME.
+latest_file=$(
+    fd --type=f . "$HOME" --exec stat -c '%Y %n' {} \; |
+        sort -nr |
+        head -1 |
+        cut -d ' ' -f 2-
+)
+
+if [[ -z $latest_file ]]; then
+    printf 'No files found under %s\n' "$HOME" >&2
+    exit 1
+fi
+
+dragon-drop "$latest_file"

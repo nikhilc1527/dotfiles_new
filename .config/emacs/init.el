@@ -22,8 +22,6 @@
 ;; Keybindings
 (global-set-key (kbd "<f5>") #'revert-buffer)
 (global-set-key (kbd "C-x C-b") #'buffer-menu)
-(use-package terminal-here
-  :bind (("C-x RET RET" . terminal-here-launch)))
 ;; (global-set-key (kbd "C-x RET RET")
 ;;                 (lambda ()
 ;;                   (interactive)
@@ -53,6 +51,9 @@
   (package-install 'use-package))
 (require 'use-package)
 (setq use-package-always-ensure t)
+
+(use-package terminal-here
+  :bind (("C-x RET RET" . terminal-here-launch)))
 
 ;; Completion UI: Vertico
 (use-package vertico

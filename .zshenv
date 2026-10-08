@@ -57,7 +57,7 @@ export ANDROID_HOME=$HOME/MyFiles/AndroidSDK2
 # . ~/.config/tty.sh
 
 # ibus stuff
-# GTK_IM_MODULE=ibus 
+# GTK_IM_MODULE=ibus
 # QT_IM_MODULE=ibus
 # XMODIFIERS="@im=ibus"
 
@@ -87,8 +87,13 @@ export CARGO_HOME="$HOME/.config/cargo"
 
 # export LD_PRELOAD="/home/haddr/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
 
-[ -f "/home/haddr/.ghcup/env" ] && . "/home/haddr/.ghcup/env" # ghcup-env
 
 export CODEX_HOME="$XDG_CONFIG_HOME"/codex
 
 [[ ! -r '/home/haddr/.opam/opam-init/init.zsh' ]] || source '/home/haddr/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+
+[ -f "/home/nikhilc/.ghcup/env" ] && . "/home/nikhilc/.ghcup/env" # ghcup-env
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/nikhilc/.lmstudio/bin"
+# End of LM Studio CLI section
+
