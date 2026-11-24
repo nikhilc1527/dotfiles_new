@@ -3,10 +3,9 @@
 #
 
 # If not running interactively, don't do anything
+[[ $- == *i* ]] || return
 
 source $HOME/.profile
-
-[[ $- != *i* ]] && return
 
 /usr/bin/cat ~/.cache/wal/sequences
 

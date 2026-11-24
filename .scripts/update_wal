@@ -1,5 +1,9 @@
 #!/usr/bin/env xonsh
 
+from pathlib import Path
+from sys import stderr
+from tempfile import TemporaryDirectory
+
 if len($ARGS) > 1:
     wallpaper = $ARGS[1]
 else:
@@ -7,11 +11,22 @@ else:
 
 print(wallpaper)
 
-wal -i @(wallpaper)
+if !(wal -i @(wallpaper)):
+    dux_config = Path.home() / ".config/dms"
+    if dux_config.is_dir():
+        exported_theme = Path.home() / ".cache/wal/dux-pywal.json"
+        try:
+            with TemporaryDirectory(prefix=".pywal-", dir=dux_config) as staging:
+                staged_theme = Path(staging) / "pywal-theme.json"
+                staged_theme.write_bytes(exported_theme.read_bytes())
+                staged_theme.replace(dux_config / staged_theme.name)
+        except OSError as error:
+            print(f"Could not refresh the Dux theme ({error})", file=stderr)
+
 cp ~/.cache/wal/colors-waybar.css ~/.config/waybar/
 cp ~/.cache/wal/fuzzel.ini ~/.config/fuzzel/
 
-killall -s SIGUSR2 waybar
+# killall -s SIGUSR2 waybar
 
 pywalfox update
 

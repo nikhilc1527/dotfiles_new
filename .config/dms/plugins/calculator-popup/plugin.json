@@ -1,0 +1,11 @@
+{
+  "id": "calculator-popup",
+  "name": "Calculator Popup",
+  "description": "Opens Spotlight with a blank input scoped to the Calculator plugin.",
+  "version": "1.0.0",
+  "author": "Local configuration",
+  "icon": "calculate",
+  "type": "daemon",
+  "capabilities": ["launcher"],
+  "component": "./CalculatorPopup.qml"
+}

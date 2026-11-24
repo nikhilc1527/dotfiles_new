@@ -83,6 +83,10 @@ hl.config({
         resolve_binds_by_sym = false,
     },
 
+    cursor = {
+        no_hardware_cursors = false
+    },
+
     general = {
         gaps_in = 10,
         gaps_out = 15,
@@ -145,6 +149,12 @@ hl.config({
     },
 })
 
+hl.device({
+    name = "punktfunk-pen",
+    output = "tablet",
+})
+
+
 -- Default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
 hl.curve("myBezier", { type = "bezier", points = { { 0.05, 0.9 }, { 0.1, 1.05 } } })
 
@@ -183,7 +193,8 @@ hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("firefox"))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exit())
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("OUT=$(date '+%Y_%m_%d_%H_%M_%S').png; hyprshot -s -m region -f $OUT"))
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("dms ipc call calculator-popup open"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("OUT=$(date '+%Y_%m_%d_%H_%M_%S').png; hyprshot --freeze -s -m region -f $OUT"))
 hl.bind(mainMod .. " + Backspace", hl.dsp.exec_cmd("wlogout"))
 hl.bind(mainMod .. " + SHIFT + X", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd([=[emacsclient -c -e "(switch-to-buffer \"*scratch*\")" -e "(condition-case nil (call-interactively 'find-file) (quit nil))"]=]))

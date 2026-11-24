@@ -1,0 +1,20 @@
+{
+  "name": "Pywal",
+  "primary": "#D28CBA",
+  "primaryText": "#0C142F",
+  "primaryContainer": "#BF7AAD",
+  "secondary": "#BF7AAD",
+  "surfaceTint": "#D28CBA",
+  "background": "#0C142F",
+  "backgroundText": "#dbc5dc",
+  "surface": "#0C142F",
+  "surfaceText": "#dbc5dc",
+  "surfaceVariant": "#222432",
+  "surfaceVariantText": "#dbc5dc",
+  "surfaceContainerLowest": "#0C142F",
+  "surfaceContainerLow": "#171925",
+  "surfaceContainer": "#1c1e2c",
+  "surfaceContainerHigh": "#222432",
+  "surfaceContainerHighest": "#282b3b",
+  "outline": "#99899a"
+}

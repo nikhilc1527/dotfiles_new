@@ -1,4 +1,5 @@
-[[ $TERM == "tramp" ]] && unsetopt zle && PS1='$ ' && return
+[[ -o interactive ]] || return
+[[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
 
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="mm/dd/yyyy"
