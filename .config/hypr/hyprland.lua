@@ -102,6 +102,10 @@ hl.config({
         allow_tearing = false,
     },
 
+    render = {
+        cm_auto_hdr = 0,
+    },
+
     decoration = {
         rounding = 10,
 
