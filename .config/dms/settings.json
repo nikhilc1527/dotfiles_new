@@ -440,5 +440,10 @@
     }
   },
   "launcherStyle": "spotlight",
-  "osdAlwaysShowValue": false
+  "osdAlwaysShowValue": false,
+  "batteryChargeLimit": 100,
+  "batteryNotifyLow": true,
+  "batteryLowNotificationType": 0,
+  "batteryCriticalThreshold": 5,
+  "batteryAutoPowerSaver": true
 }
