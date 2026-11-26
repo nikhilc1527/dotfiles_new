@@ -1,0 +1,444 @@
+{
+  "dmsWindowsFloatingSeeded": [
+    "hyprland"
+  ],
+  "configVersion": 42,
+  "connectedFrameBarStyleBackups": {},
+  "currentThemeName": "custom",
+  "currentThemeCategory": "custom",
+  "customThemeFile": "~/.config/dms/pywal-theme.json",
+  "frameEnabled": false,
+  "screenPreferences": {
+    "wallpaper": []
+  },
+  "workspaceNameIcons": {
+    "11": {
+      "type": "text",
+      "value": "1"
+    },
+    "12": {
+      "type": "text",
+      "value": "2"
+    },
+    "13": {
+      "type": "text",
+      "value": "3"
+    },
+    "14": {
+      "type": "text",
+      "value": "4"
+    },
+    "15": {
+      "type": "text",
+      "value": "5"
+    },
+    "16": {
+      "type": "text",
+      "value": "6"
+    },
+    "17": {
+      "type": "text",
+      "value": "7"
+    },
+    "18": {
+      "type": "text",
+      "value": "8"
+    },
+    "19": {
+      "type": "text",
+      "value": "9"
+    },
+    "20": {
+      "type": "text",
+      "value": "10"
+    },
+    "21": {
+      "type": "text",
+      "value": "1"
+    },
+    "22": {
+      "type": "text",
+      "value": "2"
+    },
+    "23": {
+      "type": "text",
+      "value": "3"
+    },
+    "24": {
+      "type": "text",
+      "value": "4"
+    },
+    "25": {
+      "type": "text",
+      "value": "5"
+    },
+    "26": {
+      "type": "text",
+      "value": "6"
+    },
+    "27": {
+      "type": "text",
+      "value": "7"
+    },
+    "28": {
+      "type": "text",
+      "value": "8"
+    },
+    "29": {
+      "type": "text",
+      "value": "9"
+    },
+    "30": {
+      "type": "text",
+      "value": "10"
+    }
+  },
+  "barConfigs": [
+    {
+      "id": "default",
+      "name": "Main Bar",
+      "enabled": true,
+      "position": 0,
+      "screenPreferences": [
+        "all"
+      ],
+      "showOnLastDisplay": true,
+      "leftWidgets": [
+        {
+          "id": "workspaceSwitcher",
+          "showWorkspaceIndex": true
+        },
+        {
+          "id": "focusedWindow",
+          "enabled": true,
+          "focusedWindowCompactMode": false,
+          "focusedWindowSize": 1,
+          "overflowMode": "section"
+        }
+      ],
+      "centerWidgets": [
+        "music",
+        "clock",
+        "weather"
+      ],
+      "rightWidgets": [
+        "systemTray",
+        "clipboard",
+        "cpuUsage",
+        "memUsage",
+        "notificationButton",
+        "battery",
+        "controlCenterButton",
+        {
+          "id": "powerMenuButton",
+          "enabled": true
+        }
+      ],
+      "spacing": 4,
+      "innerPadding": 6,
+      "barInsetPadding": 15,
+      "barLengthPadding": 0,
+      "barLengthMode": "full",
+      "barLengthPercent": 80,
+      "bottomGap": 0,
+      "attachToScreenEdge": false,
+      "followInterfaceStyle": true,
+      "transparency": 1,
+      "surfaceColor": "default",
+      "surfaceCustomColor": "#6750A4",
+      "widgetFollowInterfaceStyle": true,
+      "widgetTransparency": 1,
+      "squareCorners": false,
+      "noBackground": false,
+      "widgetStyle": "pills",
+      "maximizeWidgetIcons": false,
+      "maximizeWidgetText": false,
+      "widgetPadding": 10,
+      "batteryColorMode": "theme",
+      "gothCornersEnabled": false,
+      "gothCornerRadiusOverride": false,
+      "gothCornerRadiusValue": 12,
+      "borderEnabled": false,
+      "borderColor": "surfaceText",
+      "borderOpacity": 1,
+      "borderThickness": 1,
+      "widgetOutlineEnabled": false,
+      "widgetOutlineColor": "primary",
+      "widgetOutlineOpacity": 1,
+      "widgetOutlineThickness": 1,
+      "fontScale": 1,
+      "iconScale": 1,
+      "autoHide": false,
+      "autoHideStrict": false,
+      "autoHideDelay": 250,
+      "showOnWindowsOpen": false,
+      "openOnOverview": false,
+      "visible": true,
+      "popupGapsAuto": true,
+      "popupGapsManual": 4,
+      "maximizeDetection": true,
+      "useOverlayLayer": false,
+      "hideOnFullscreen": false,
+      "scrollEnabled": true,
+      "scrollXBehavior": "focusWindow",
+      "scrollYBehavior": "workspace",
+      "middleClickAction": "none",
+      "rightClickAction": "none",
+      "clickActionFollowMouse": false,
+      "shadowIntensity": 0,
+      "shadowOpacity": 60,
+      "shadowColorMode": "default",
+      "shadowCustomColor": "#000000",
+      "shadowDirectionMode": "inherit",
+      "shadowDirection": "top",
+      "clickThrough": false,
+      "hoverPopouts": false,
+      "hoverPopoutDelay": 150,
+      "dot": false,
+      "islandOuterGap": 15,
+      "islandCompactThickness": 28,
+      "islandReserveThickness": 45,
+      "islandSatelliteGap": 16,
+      "island": true,
+      "islandNotch": false,
+      "islandRouteLauncher": "follow",
+      "islandHomeLayout": [
+        {
+          "id": "workspaces",
+          "enabled": false
+        },
+        {
+          "id": "media",
+          "enabled": false
+        },
+        {
+          "id": "clock",
+          "enabled": true
+        },
+        {
+          "id": "weather",
+          "enabled": false
+        },
+        {
+          "id": "status",
+          "enabled": false
+        },
+        {
+          "id": "volume",
+          "enabled": false
+        },
+        {
+          "id": "brightness",
+          "enabled": false
+        },
+        {
+          "id": "notifications",
+          "enabled": true
+        },
+        {
+          "id": "privacy",
+          "enabled": true
+        },
+        {
+          "id": "keyboardLayout",
+          "enabled": false
+        },
+        {
+          "id": "tray",
+          "enabled": false
+        }
+      ],
+      "islandHomeCompactTight": false,
+      "islandSatellitesEnabled": true,
+      "islandSatelliteBackground": false
+    },
+    {
+      "id": "dot1795547820673",
+      "name": "Dot",
+      "enabled": false,
+      "position": 0,
+      "screenPreferences": [
+        "all"
+      ],
+      "showOnLastDisplay": true,
+      "leftWidgets": [
+        "launcherButton",
+        {
+          "id": "workspaceSwitcher",
+          "showWorkspaceIndex": true
+        },
+        "focusedWindow"
+      ],
+      "centerWidgets": [
+        "music",
+        "clock",
+        "weather"
+      ],
+      "rightWidgets": [
+        "systemTray",
+        "clipboard",
+        "cpuUsage",
+        "memUsage",
+        "notificationButton",
+        "battery",
+        "controlCenterButton"
+      ],
+      "spacing": 4,
+      "innerPadding": 6,
+      "barInsetPadding": 15,
+      "barLengthPadding": 0,
+      "barLengthMode": "full",
+      "barLengthPercent": 80,
+      "bottomGap": 0,
+      "attachToScreenEdge": false,
+      "followInterfaceStyle": false,
+      "transparency": 1,
+      "surfaceColor": "default",
+      "surfaceCustomColor": "#6750A4",
+      "widgetFollowInterfaceStyle": true,
+      "widgetTransparency": 1,
+      "squareCorners": false,
+      "noBackground": false,
+      "widgetStyle": "pills",
+      "maximizeWidgetIcons": false,
+      "maximizeWidgetText": false,
+      "widgetPadding": 10,
+      "batteryColorMode": "theme",
+      "gothCornersEnabled": false,
+      "gothCornerRadiusOverride": false,
+      "gothCornerRadiusValue": 12,
+      "borderEnabled": false,
+      "borderColor": "surfaceText",
+      "borderOpacity": 1,
+      "borderThickness": 1,
+      "widgetOutlineEnabled": false,
+      "widgetOutlineColor": "primary",
+      "widgetOutlineOpacity": 1,
+      "widgetOutlineThickness": 1,
+      "fontScale": 1,
+      "iconScale": 1,
+      "autoHide": false,
+      "autoHideStrict": false,
+      "autoHideDelay": 250,
+      "showOnWindowsOpen": false,
+      "openOnOverview": false,
+      "visible": true,
+      "popupGapsAuto": true,
+      "popupGapsManual": 4,
+      "maximizeDetection": true,
+      "useOverlayLayer": false,
+      "hideOnFullscreen": false,
+      "scrollEnabled": true,
+      "scrollXBehavior": "focusWindow",
+      "scrollYBehavior": "workspace",
+      "middleClickAction": "none",
+      "rightClickAction": "none",
+      "clickActionFollowMouse": false,
+      "shadowIntensity": 0,
+      "shadowOpacity": 60,
+      "shadowColorMode": "default",
+      "shadowCustomColor": "#000000",
+      "shadowDirectionMode": "inherit",
+      "shadowDirection": "top",
+      "clickThrough": false,
+      "hoverPopouts": false,
+      "hoverPopoutDelay": 150,
+      "dot": true,
+      "islandOuterGap": 15,
+      "islandCompactThickness": 28,
+      "islandReserveThickness": 45,
+      "islandSatelliteGap": 16,
+      "island": false
+    }
+  ],
+  "density": "spacious",
+  "dockConfigs": [
+    {
+      "id": "dock",
+      "name": "Dock",
+      "enabled": false,
+      "screenPreferences": [
+        "all"
+      ],
+      "showOnLastDisplay": true,
+      "position": 1,
+      "mode": "compact",
+      "middleClickAction": "close",
+      "taskbarAlign": "center",
+      "widgetExpansion": "popout",
+      "iconSize": 46,
+      "spacing": 10,
+      "itemSpacing": 10,
+      "margin": 8,
+      "bottomGap": 0,
+      "transparency": 1,
+      "followInterfaceStyle": true,
+      "autoHide": false,
+      "smartAutoHide": false,
+      "useOverlayLayer": false,
+      "editOnRightClick": false,
+      "showOnFullscreen": false,
+      "openOnOverview": false,
+      "groupByApp": false,
+      "separatePinnedAndRunningApps": false,
+      "restoreSpecialWorkspaceOnClick": false,
+      "isolateDisplays": false,
+      "indicatorStyle": "circle",
+      "borderEnabled": false,
+      "borderColor": "surfaceText",
+      "borderOpacity": 1,
+      "borderThickness": 1,
+      "launcherEnabled": true,
+      "launcherLogoMode": "os",
+      "launcherLogoCustomPath": "",
+      "launcherLogoColorOverride": "",
+      "launcherLogoSizeOffset": 0,
+      "launcherLogoBrightness": 0.5,
+      "launcherLogoContrast": 1,
+      "maxVisibleApps": 0,
+      "maxVisibleRunningApps": 0,
+      "showOverflowBadge": true,
+      "showTrash": false,
+      "trashFileManager": "default",
+      "trashCustomCommand": "",
+      "magnification": false,
+      "magnificationScale": 130,
+      "magnificationProfile": "parabolic",
+      "magnificationExpand": false,
+      "order": [],
+      "widgets": [
+        {
+          "id": "dock_launcher",
+          "widgetId": "dockLauncher",
+          "enabled": true
+        },
+        {
+          "id": "dock_apps",
+          "widgetId": "appsDock",
+          "enabled": true
+        },
+        {
+          "id": "dock_trash",
+          "widgetId": "dockTrash",
+          "enabled": true
+        }
+      ]
+    }
+  ],
+  "builtInPluginSettings": {
+    "dms_qr_generator": {
+      "trigger": "qrg"
+    },
+    "dms_power": {
+      "trigger": "pw"
+    },
+    "dms_clipboard_search": {
+      "trigger": "cb"
+    },
+    "dms_settings_search": {
+      "trigger": "?"
+    }
+  },
+  "launcherStyle": "spotlight",
+  "osdAlwaysShowValue": false
+}

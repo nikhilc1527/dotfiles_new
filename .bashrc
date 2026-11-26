@@ -3,14 +3,13 @@
 #
 
 # If not running interactively, don't do anything
+[[ $- == *i* ]] || return
+
+source $HOME/.profile
 
 /usr/bin/cat ~/.cache/wal/sequences
 
 fastfetch
-
-source $HOME/.profile
-
-[[ $- != *i* ]] && return
 
 alias pip='pip3'
 alias python='python3'
@@ -23,7 +22,7 @@ alias g+='g++ -fsanitize=address,undefined -g -oout -std=c++17 '
 
 alias lf='lfcd'
 
-alias ls='exa --sort=modified -la --icons --group-directories-first'
+alias ls='exa --sort=modified -lag --icons --group-directories-first'
 # alias ls='lf'
 
 alias dwmblocks_update='last_pwd=$PWD; cd ~/.local/src/dwmblocks/ && make && plz make install && killall dwmblocks && setsid -f dwmblocks && cd $last_pwd && unset last_pwd'
@@ -112,12 +111,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -f "$XDG_DATA_HOME/fzf.sh" ] && bash "$XDG_DATA_HOME"/fzf.sh
 # test
 
-# . ~/.local/src/Extract/extract 
+# . ~/.local/src/Extract/extract
 
 reblue() {
     bluetoothctl power off
     bluetoothctl power on
-    bluetoothctl connect 14:3F:A6:3D:DA:2B    
+    bluetoothctl connect 14:3F:A6:3D:DA:2B
 }
 
 BOOKMARK_PATH="$HOME/.config/bookmarks"
@@ -125,3 +124,8 @@ if [ -d "$BOOKMARK_PATH" ]; then
     export CDPATH=".:$BOOKMARK_PATH/"
     alias g="cd -P"
 fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/nikhilc/.lmstudio/bin"
+# End of LM Studio CLI section
+

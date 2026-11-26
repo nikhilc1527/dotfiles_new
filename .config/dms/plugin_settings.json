@@ -1,0 +1,11 @@
+{
+  "calculator": {
+    "enabled": true,
+    "calcEngine": "qalc",
+    "noTrigger": false,
+    "trigger": "="
+  },
+  "calculator-popup": {
+    "enabled": true
+  }
+}

@@ -1,4 +1,5 @@
-[[ $TERM == "tramp" ]] && unsetopt zle && PS1='$ ' && return
+[[ -o interactive ]] || return
+[[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
 
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="mm/dd/yyyy"
@@ -35,7 +36,6 @@ precmd() { print -Pn "\e]0;%n@%M:%~\a" }
 
 source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
-[ -f "/home/haddr/.ghcup/env" ] && . "/home/haddr/.ghcup/env" # ghcup-env
 
 # BEGIN opam configuration
 # This is useful if you're using opam as it adds:
@@ -44,3 +44,5 @@ source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 # This section can be safely removed at any time if needed.
 
 # END opam configuration
+
+[ -f "/home/nikhilc/.ghcup/env" ] && . "/home/nikhilc/.ghcup/env" # ghcup-env

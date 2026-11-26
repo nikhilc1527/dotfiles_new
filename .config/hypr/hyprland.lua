@@ -48,10 +48,9 @@ hl.on("hyprland.start", function()
                             hl.exec_cmd("blueman-applet")
                             hl.exec_cmd("nextcloud --background")
                             hl.exec_cmd("nm-applet")
-                            hl.exec_cmd("syncthing --no-browser")
+                            -- hl.exec_cmd("syncthing --no-browser")
                             hl.exec_cmd("batsignal -p -m 1 -b")
-                            hl.exec_cmd("easyeffects -w")
-                            hl.exec_cmd(os.getenv("HOME") .. "/.scripts/firefox_popup_watcher.sh")
+                            hl.exec_cmd("start-tablet-mon.sh")
 end)
 
 -- plugins
@@ -84,6 +83,10 @@ hl.config({
         resolve_binds_by_sym = false,
     },
 
+    cursor = {
+        no_hardware_cursors = false
+    },
+
     general = {
         gaps_in = 10,
         gaps_out = 15,
@@ -97,6 +100,10 @@ hl.config({
 
         -- Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
         allow_tearing = false,
+    },
+
+    render = {
+        cm_auto_hdr = 0,
     },
 
     decoration = {
@@ -146,6 +153,12 @@ hl.config({
     },
 })
 
+hl.device({
+    name = "punktfunk-pen",
+    output = "tablet",
+})
+
+
 -- Default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
 hl.curve("myBezier", { type = "bezier", points = { { 0.05, 0.9 }, { 0.1, 1.05 } } })
 
@@ -184,7 +197,8 @@ hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("firefox"))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exit())
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("OUT=$(date '+%Y_%m_%d_%H_%M_%S').png; hyprshot -s -m region -f $OUT"))
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("dms ipc call calculator-popup open"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("OUT=$(date '+%Y_%m_%d_%H_%M_%S').png; hyprshot --freeze -s -m region -f $OUT"))
 hl.bind(mainMod .. " + Backspace", hl.dsp.exec_cmd("wlogout"))
 hl.bind(mainMod .. " + SHIFT + X", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd([=[emacsclient -c -e "(switch-to-buffer \"*scratch*\")" -e "(condition-case nil (call-interactively 'find-file) (quit nil))"]=]))
@@ -224,7 +238,8 @@ hl.bind(mainMod .. " + SHIFT + F",
 )
 
 hl.bind(mainMod .. " + SHIFT + Space", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("hyprctl dispatch pin"))
+hl.bind(mainMod .. " + S", hl.dsp.window.pin())
+hl.bind(mainMod .. " + T", hl.dsp.window.set_prop({ prop = "opaque", value = "toggle" }))
 
 -- grouping
 hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("hyprctl dispatch togglegroup"))
@@ -251,3 +266,70 @@ hl.bind(mainMod .. " + mouse_up", hl.dsp.exec_cmd("hyprctl dispatch split-worksp
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+
+if hl.plugin.hypr3d then
+    hl.bind("SUPER + F12", hl.plugin.hypr3d.toggle)
+    hl.plugin.hypr3d.config({
+        world = {
+            panorama = "~/panorama.png",
+            grid = false,
+        },
+        windows = {
+            window_scale = 0.25,
+            spawn_distance = 2,
+        },
+        player = {
+            mesh = {
+                path = "~/player.gltf",
+                transform = {
+                    rotation = {0, 90, 0},
+                    scale =    {1.5, 1.5, 1.5},
+                },
+                emissive_scale = 1.0,
+                flat = true,
+                center = "origin",
+            },
+            animations = {
+                idle = {source = "Idle"},
+                walk = {source = "Walking"},
+                run = {source = 2},
+                jump = {source = 3, duration_scale=2.4},
+            },
+            collision = true,
+            move_speed = 1.5,
+            spawn = {0, 67, 0},
+            flying = false,
+            walk_bob = true
+        },
+        scene = {
+            mymap = {
+                mesh = {
+                    path = "~/scene.gltf",
+                    transform = {
+                        position = {1, 0, 0},
+                    },
+                    emissive_scale = 1.0,
+                    center_offset = {0, 34, 0},
+                },
+                collision = true,
+                static = true,
+            },
+            anyname = {
+                mesh = {
+                    path = "eevee.gltf",
+                    transform = {
+                        position = {y = 3},
+                        scale =    {2, 2, 2},
+                    },
+                    emissive_scale = 1.0,
+                    flat = true,
+                    center = "origin",
+                    center_offset = {0, 20, 0},
+                },
+                collision = true,
+                static = false,
+                physics = true,
+            },
+        }
+    })
+end

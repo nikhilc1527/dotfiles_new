@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+set -u
+
+OUTPUT_NAME="tablet"
+SUNSHINE_SERVICE="app-dev.lizardbyte.app.Sunshine.service"
+
+# Export the current Hyprland/Wayland session variables to user services.
+systemctl --user import-environment \
+    WAYLAND_DISPLAY \
+    XDG_CURRENT_DESKTOP \
+    XDG_SESSION_TYPE \
+    XDG_RUNTIME_DIR \
+    HYPRLAND_INSTANCE_SIGNATURE 2>/dev/null || true
+
+dbus-update-activation-environment --systemd \
+    WAYLAND_DISPLAY \
+    XDG_CURRENT_DESKTOP \
+    XDG_SESSION_TYPE \
+    XDG_RUNTIME_DIR \
+    HYPRLAND_INSTANCE_SIGNATURE 2>/dev/null || true
+
+# Do not create a duplicate output if the script is run twice.
+if ! hyprctl monitors all -j |
+    jq -e --arg name "$OUTPUT_NAME" \
+        '.[] | select(.name == $name)' >/dev/null; then
+    hyprctl output create headless "$OUTPUT_NAME"
+fi
+
+# Wait up to about five seconds for Hyprland to publish the output.
+for _ in {1..50}; do
+    if hyprctl monitors all -j |
+        jq -e --arg name "$OUTPUT_NAME" \
+            '.[] | select(.name == $name)' >/dev/null; then
+        break
+    fi
+
+    sleep 0.1
+done
+
+# Confirm that the output was actually created.
+if ! hyprctl monitors all -j |
+    jq -e --arg name "$OUTPUT_NAME" \
+        '.[] | select(.name == $name)' >/dev/null; then
+    echo "Failed to create Hyprland output: $OUTPUT_NAME" >&2
+    exit 1
+fi
+
+# Restart Sunshine only after the virtual output is available.
+systemctl --user restart "$SUNSHINE_SERVICE"
+ 
