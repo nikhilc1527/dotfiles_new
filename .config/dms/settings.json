@@ -558,5 +558,10 @@
       "h": 1,
       "small": true
     }
-  ]
+  ],
+  "batteryChargeLimit": 100,
+  "batteryNotifyLow": true,
+  "batteryLowNotificationType": 0,
+  "batteryCriticalThreshold": 5,
+  "batteryAutoPowerSaver": true
 }
