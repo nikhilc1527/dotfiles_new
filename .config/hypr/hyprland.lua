@@ -43,7 +43,7 @@ hl.on("hyprland.start", function()
                             -- which can be a symlink
                             hl.exec_cmd("hyprpaper")
                             hl.exec_cmd("update_wal")
-                            hl.exec_cmd("waybar")
+                            -- hl.exec_cmd("waybar")
                             hl.exec_cmd("udiskie")
                             hl.exec_cmd("blueman-applet")
                             hl.exec_cmd("nextcloud --background")
